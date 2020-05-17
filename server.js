@@ -1,11 +1,50 @@
-const http = require('http');
-const express = require('express');
-const socketio = require('socket.io');
 
+const path = require('path');
+const express = require('express');
+const http = require('http');
+const socketio = require('socket.io');
+const formatMessage = require('./utils/messages');
 const app = express();
-var PORT = process.env.PORT;
-const clientPath = `${__dirname}/client`;
+const server = http.createServer(app);
+const io = socketio(server);
+
+const PORT = process.env.PORT;  // 8080; //process.env.PORT; 
+
+//set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+const botName = 'ChatCord Bot';
+
+//run when client connects
+io.on('connection', (sock) => {
+
+    sock.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+
+    sock.broadcast.emit('message', formatMessage(botName,'A user has joined the chat'));
+
+    sock.on('disconnect', () => {
+        io.emit('message', formatMessage(botname,'A user has left the chat'));
+    });
+
+    //listen for chatMessage
+    sock.on('chatMessage', msg => {
+        io.emit('message', formatMessage('USER', msg));
+    });
+});
+
+
+server.listen(PORT, () => console.log(`Serving static from ${PORT}`));
+
+
+
+
+
+
+
+/*
+const clientPath = `${__dirname}/public`;
 console.log(`Serving static from ${clientPath}`);
+
+
 
 app.use(express.static(clientPath));
 
@@ -29,3 +68,5 @@ server.on('error', (err) => {
 server.listen(PORT, () => {
 	console.log('RPS started on 8080');
 });
+
+*/
