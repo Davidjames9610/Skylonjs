@@ -1,72 +1,75 @@
-
+// this is the main file run by everything 
 const path = require('path');
-const express = require('express');
+var express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
-const formatMessage = require('./utils/messages');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const PORT = process.env.PORT;  // 8080; //process.env.PORT; 
+//set up the port location 
+
+const PORT = 8080; //process.env.PORT;  // 8080; //process.env.PORT; 
 
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
-const botName = 'ChatCord Bot';
+
+//set the name of the bot
+const botName = 'Skylon Bot';
+
+//import functions to use later
+const formatMessage = require('./utils/messages');
+const {
+    userJoin,
+    getCurrentUser,
+    userLeave,
+    getRoomUsers
+} = require('./utils/users');
 
 //run when client connects
 io.on('connection', (sock) => {
+    sock.on('joinRoom', ({ username, room }) => {
+        const user = userJoin(sock.id, username, room);
+        sock.join(user.room);           //we join the right room for the user
 
-    sock.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+        //welcome current user
+        sock.emit('message', formatMessage(botName, 'Welcome to Skylon!'));
 
-    sock.broadcast.emit('message', formatMessage(botName,'A user has joined the chat'));
+        //broadcast whenever user connects
+        sock.broadcast.to(user.room).emit('message', formatMessage(botName, `${user.username} has joined the chat`));
 
-    sock.on('disconnect', () => {
-        io.emit('message', formatMessage(botname,'A user has left the chat'));
+        //send users and room info
+        io.to(user.room).emit('roomUsers', {
+            room: user.room,
+            users: getRoomUsers(user.room)
+        });
+
     });
 
     //listen for chatMessage
     sock.on('chatMessage', msg => {
-        io.emit('message', formatMessage('USER', msg));
+        const user = getCurrentUser(sock.id);
+        io.to(user.room).emit('message', formatMessage(user.username, msg));
+
+    });
+
+    // Runs when client disconnects
+    sock.on('disconnect', () => {
+        const user = userLeave(sock.id);
+
+        if (user) {
+            io.to(user.room).emit(
+                'message',
+                formatMessage(botName, `${user.username} has left the chat`)
+            );
+
+            // Send users and room info
+            io.to(user.room).emit('roomUsers', {
+                room: user.room,
+                users: getRoomUsers(user.room)
+            });
+        }
     });
 });
 
-
 server.listen(PORT, () => console.log(`Serving static from ${PORT}`));
-
-
-
-
-
-
-
-/*
-const clientPath = `${__dirname}/public`;
-console.log(`Serving static from ${clientPath}`);
-
-
-
-app.use(express.static(clientPath));
-
-const server = http.createServer(app);
-
-const io = socketio(server);
-
-io.on('connection', (sock) => {
-	console.log('Someone connected');
-	sock.emit('message', 'Hi, you are connected');
-
-	sock.on('message', (text) => {
-		io.emit('message', text);
-	});
-});
-
-server.on('error', (err) => {
-	console.error('Server error:', err);
-});
-
-server.listen(PORT, () => {
-	console.log('RPS started on 8080');
-});
-
-*/
