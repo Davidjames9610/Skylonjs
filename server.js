@@ -9,7 +9,7 @@ const io = socketio(server);
 
 //set up the port location 
 
-const PORT = 8080; //process.env.PORT;  // 8080; //process.env.PORT; 
+const PORT = process.env.PORT;  // 8080; //process.env.PORT; 
 
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
