@@ -126,11 +126,18 @@ a {
 	flex: 1;
 }
 
+.role-choice-container {
+    background: var(--dark-color-b);
+    color: #fff;
+    padding: 25px 50px 75px;
+}
+
+
 /* Join Page */
 .join-container {
-	max-width: 500px;
-	margin: 80px auto;
-	color: #fff;
+    max-width: 500px;
+    margin: 80px auto;
+    color: #fff;
 }
 
 .join-header {
@@ -171,6 +178,13 @@ a {
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+}
+
+.pilot-class {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    width: 100%;
 }
 
 .join-main .btn {
