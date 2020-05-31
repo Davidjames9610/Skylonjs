@@ -6,12 +6,13 @@ const userList = document.getElementById('users');
 const eng_display = document.querySelector('.eng-display');
 const pilot_display = document.querySelector('.pilot-display');
 const chat_display = document.querySelector('.chat-display');
+const shared_display = document.querySelector('.shared-display');
+const roomTime = document.getElementById('roomTime');
 var role = 0;
+var time = 0;
 
 
-//Every client has a main.js running... and is communicating with the same server.js 
-// in this file I have acess to the username and the room of the user in question
-// How can I create a game, start a timer, and display differant things for the two players.
+
 
 //  Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -53,7 +54,7 @@ chatForm.addEventListener('submit', e => {
 });
 
 
-// Output message to DOM
+//------------------------------------------------------------------------------------- Output message to DOM
 
 function outputMessage(message) {
     const div = document.createElement('div');
@@ -77,13 +78,16 @@ function outputUsers(users) {
   `;
 }
 
-//choose pilot or engineer
+function outputTime(time) {
+    roomTime.innerText = time;
+}
+
+//------------------------------------------------------------------------------------------ choose pilot or engineer
 
 document.getElementById("pilot_select").onclick = function () { pilot_function() };
 
 function pilot_function() {
     role = "Pilot";
-    //console.log(role);
 
     const msg = "Pilot";
     socket.emit('chatMessage', msg);
@@ -94,12 +98,10 @@ document.getElementById("engineer_select").onclick = function () { engineer_func
 
 function engineer_function() {
     role = "Engineer";
-    //console.log(role);
 
     const msg = "Engineer";
     socket.emit('chatMessage', msg);
 }
-
 
 
 function myFunction() {
@@ -107,6 +109,8 @@ function myFunction() {
     if (role === "Engineer") {
         eng_display.style.display = "block";
         chat_display.style.display = "none";
+        shared_display.style = "block";
+
     const msg = "Start game";
         socket.emit('startGame', msg);
         console.log(msg);
@@ -115,20 +119,22 @@ function myFunction() {
     if (role === "Pilot") {
         pilot_display.style.display = "block";
         chat_display.style.display = "none";
+        shared_display.style = "block";
     }
 
 }
 
 socket.on('starting', message => {
     console.log("server working");
-    //working up to here
+
 });
 
 socket.on('update', gameobj => {
-    //console.log("holly shit");
-    msg = JSON.stringify(gameobj.time);
-    console.log(msg);
-    //working up to here
+
+    time = JSON.stringify(gameobj.time);
+    outputTime(time);
+   
+
 });
 
 
