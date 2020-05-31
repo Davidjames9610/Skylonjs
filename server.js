@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 
-const PORT = 8090;//process.env.PORT;  // 8080; //process.env.PORT; 
+const PORT = process.env.PORT;  // 8080; //process.env.PORT; 
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -144,6 +144,7 @@ var update = function (delta,sock) {
         for (var i = 0; i < games.length; i++) {
 
             if (secondCounter > 20) {
+                //second timer
                 secondCounter = 0;
                 games[i].updateTime();
                 io.to(games[i].room).emit('update', games[i]);
@@ -153,14 +154,5 @@ var update = function (delta,sock) {
 }
 
 
-/**
-A function that wastes time, and occupies 100% CPU while doing so.
-Suggested use: simulating that a complex calculation took time to complete.
-*/
-//var aVerySlowFunction = function (milliseconds) {
-    // waste time
- //   var start = Date.now();
-  //  while (Date.now() < start + milliseconds) { }
-//}
 
 

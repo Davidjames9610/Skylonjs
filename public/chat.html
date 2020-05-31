@@ -59,23 +59,49 @@
         </div>
     </div>
     <div class="eng-display">
-        <h1>
-            This is the eng div!
-        </h1>
+        <div id = "eng-container">
+            <div id ="eng-header">
+                <h1>Engineer Display</h1>
+            </div>
+            <div id="eng-footer">
+                Copyright &copy, 2020 David Edwards
+            </div>
+        </div>
     </div>
     <div class="pilot-display">
-        <h1>
-            This is the pilot div!
-        </h1>
+        <div class="pil-container">
+            <div class="pil-header">
+                <h1>Pilot Display</h1>
+            </div>
+            <div class="pil-content">
+                <div class="pil-abort">
+                    <u1>
+                        <h2>Abort display</h2>
+                    </u1>
+                </div>
+                <div class="pil-main">
+                    <h2>
+                        Main display
+                    </h2>
+                    <img src="assets/hud.png" alt="Simply Easy Learning" width=" 460"
+                         height=" 460">
+                </div>
+                <div class="pil-control">
+                    <h2>
+                        Control display
+                    </h2>
+                </div>
+            </div>
+            <div class="pil-footer">
+                Copyright &copy, 2020 David Edwards
+            </div>
+        </div>
     </div>
     <div class="shared-display">
         <h1>
             This is the shared div!
         </h1>
         <h2 id="roomTime">time</h2>
-    </div>
-    <div>
-        Copyright &copy, 2020 David Edwards
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
