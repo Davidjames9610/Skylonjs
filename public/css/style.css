@@ -17,7 +17,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	background: var(--light-color);
+	background-color: tan;
 	margin: 20px;
 }
 
@@ -192,6 +192,7 @@ a {
 	width: 100%;
 }
 
+
 @media (max-width: 700px) {
 	.chat-main {
 		display: block;
@@ -204,9 +205,9 @@ a {
 
 .pil-container {
     background-color: #e6e9ff;
-    width: 1005px;
     margin-left: auto;
     margin-right: auto;
+    border: 3px solid #000000;
 }
 
 .pil-header {
@@ -267,6 +268,20 @@ a {
     color: black;
     text-align: left;
 }
+
+.eng-display {
+    color: black;
+}
+
+.eng-container {
+    color: black;
+    background-color: grey;
+    border-width: 2px;
+    border-color: red;
+    border-style: dashed;
+    display: block;
+}
+
 
 
 

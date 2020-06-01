@@ -9,8 +9,14 @@
     <style>
         .eng-display { 
             display: none;
+            overflow: hidden;
+            border: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
         } 
         .pilot-display { 
+
             display: none;
         } 
         .chat-display{
@@ -59,13 +65,25 @@
         </div>
     </div>
     <div class="eng-display">
-        <div id = "eng-container">
-            <div id ="eng-header">
+        <div class ="eng-container">
+            <div id="eng-header">
                 <h1>Engineer Display</h1>
             </div>
+            <button id="sizeButton">Get Size</button>
+
+            <div id="screenSize"></div>
+            <div id="windowSize"></div>
+            <div id="contentSize"></div>
+            <h2 id="roomTime">time</h2>
+
+            <input type="text" id="cursorX" size="3"> X-position of the mouse cursor
+            <br /><br />
+            <input type="text" id="cursorY" size="3"> Y-position of the mouse cursor
+
             <div id="eng-footer">
                 Copyright &copy, 2020 David Edwards
             </div>
+
         </div>
     </div>
     <div class="pilot-display">
@@ -95,13 +113,10 @@
             <div class="pil-footer">
                 Copyright &copy, 2020 David Edwards
             </div>
+
         </div>
     </div>
     <div class="shared-display">
-        <h1>
-            This is the shared div!
-        </h1>
-        <h2 id="roomTime">time</h2>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
