@@ -27,6 +27,13 @@ var time = 0;
 var window_width = window.innerWidth;
 var window_height = window.innerHeight;
 
+var world_width = 100;
+var world_height = 100;
+
+import { setScreenSize } from './setScreen.js';
+
+//const screen = screen();
+
 
 //  Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -41,6 +48,7 @@ socket.emit('joinRoom', { username, room });            //this is done at the st
 socket.on('roomUsers', ({ room, users }) => {
     outputRoomName(room);
     outputUsers(users);
+
 });
 
 
@@ -117,8 +125,9 @@ function engineer_function() {
     socket.emit('chatMessage', msg);
 }
 
+document.getElementById("start_game").onclick = function () { start_function() };
 
-function myFunction() {
+function start_function() {
 
     if (role === "Engineer") {
         eng_display.style.display = "block";
@@ -170,13 +179,14 @@ btn.addEventListener('click', () => {
 
     eng_container.setAttribute("style", "display:block;width:500px");
 
-    var width = '500px';
     var width2 = window.innerWidth + "px";
     //msg = JSON.stringify(width2);
     console.log(width2);
 
     eng_container.style.width = window.innerWidth + "px";
     eng_container.style.height = window.innerHeight + "px";
+
+    setScreenSize();
 
 })
 
@@ -185,6 +195,8 @@ btn.addEventListener('click', () => {
 // --------------------------------------------------- insure the window size is the right size and set up the game world sizes
 
 window.addEventListener("resize", manageWindowSize);
+
+
 
 function manageWindowSize() {
 
@@ -196,7 +208,8 @@ function manageWindowSize() {
         screenSize.innerText = `Screen Height: ${screen.height} - Screen Width: ${screen.width}`
         windowSize.innerText = `Window Height: ${window.outerHeight} - Window Width: ${window.outerWidth}`
         contentSize.innerText = `Content Height: ${window.innerHeight} - Content Width: ${window.innerWidth}`
-        
+
+ 
 
         // try resizing the container elements
 
@@ -223,4 +236,11 @@ function getCursorXY(e) {
     document.getElementById('cursorX').value = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
     document.getElementById('cursorY').value = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 }
+
+
+
+//set sizes
+
+
+
 
