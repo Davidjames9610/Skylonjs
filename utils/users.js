@@ -1,3 +1,4 @@
+/*
 const users = [];
 
 //// Join user to chat
@@ -34,3 +35,5 @@ module.exports = {
  userLeave,
  getRoomUsers
 };
+
+*/

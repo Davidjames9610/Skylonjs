@@ -1,45 +1,86 @@
 // JavaScript source code
+
 const games = [];
 
-let gamez = require('./game');
-let Game = gamez.Game;
+var game = require('./game.js');
 
-function joinGame(user) {
+function addUsertoGames(id, username, room) {
 
-    // Will only create a new game object if no others have been created...
-
-    const index = games.findIndex(game => game.room === user.room);
-
+    //first create the game if a game does not exist in the room yet
+    const index = games.findIndex(game => game.room === room);
     if (index == -1) {
-        newgame = new Game(user.room);
-        games.push(newgame);
-        console.log(games.length);
-    } else {
-        console.log("Game has been created already");
-        console.log(JSON.stringify(user.room));
+        var newGame = new game(room); 
+        games.push(newGame);
     }
-}
+    const msg2 = JSON.stringify(games.length);
+    console.log(msg2);
 
-function startRoomGame(user) {
-    gameobj = games.find(game => game.room === user.room);
-    //newgame = new Game(user.room);
-    gameobj.startGame();
-    //gameobj.start();
-
-    //newgame = new game(user.room);
-   // test();
+    //A game with the correct room now definetly exists
+    return getGamefromGames(room).addUser(id, username, room);       //should return the newly added user
 
 }
 
-function getGames() {
-    return games;
+function getGamefromGames(room) {
+    return games.find(game => game.room === room);
 }
+
+function removeUserfromGames(id) {
+
+    // we first use the id to find the game with the user
+
+    for (var i = 0; i < games.length; i++) {
+
+        const user = games[i].getUserfromGame(id);
+
+        if (user != false) {
+
+            //we now have a handle on the user we want to remove, we get the game the user is in
+            const currentGame = getGamefromGames(user.room);
+
+            // we remove the user from the correct game
+            currentGame.removeUserfromGame(id);
+
+            if (currentGame.getUserslength() < 1) {
+
+                // remove game 
+                const index = games.findIndex(game => game.room === user.room);
+                if (index !== -1) {
+                    games.splice(index, 1)[0];
+                }
+
+                console.log("removed a game");
+                msg2 = JSON.stringify(games.length);
+                console.log(msg2);
+
+                return false;            //return false if the game has been removed
+            }
+
+            return user;        // return user to send message to the other if game room is still running
+
+        }
+    }
+
+}
+
+function getUserfromGames(id) {
+
+    for (var i = 0; i < games.length; i++) {
+
+        const user = games[i].getUserfromGame(id);
+
+        if (user != false) {
+            return user;
+        }
+    }
+
+}
+
 
 
 module.exports = {
-    joinGame,
-    startRoomGame,
-    getGames
+    addUsertoGames,
+    removeUserfromGames,
+    getGamefromGames,
+    getUserfromGames
 };
-
 

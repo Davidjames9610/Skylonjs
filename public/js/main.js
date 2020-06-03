@@ -30,7 +30,7 @@ var window_height = window.innerHeight;
 var world_width = 100;
 var world_height = 100;
 
-import { setScreenSize } from './setScreen.js';
+import screenObject from './screenObject.js';
 
 //const screen = screen();
 
@@ -128,6 +128,17 @@ function engineer_function() {
 document.getElementById("start_game").onclick = function () { start_function() };
 
 function start_function() {
+    // this function is run as soon as the start button is clicked
+    // at this point I want to find out screen information and set the correct div variables to the right size...
+
+    //function find aspect ratio and width of screen.
+
+    var myScreen = new screenObject(screen.width, screen.height);
+
+    // I know want to output the aspect ratio:
+    myScreen.calculateConstants();
+
+    console.log(JSON.stringify(myScreen.gcd(1680, 1050)));
 
     if (role === "Engineer") {
         eng_display.style.display = "block";

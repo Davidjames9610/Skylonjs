@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 
-const PORT = 8090;//process.env.PORT;  // 8080; //process.env.PORT; 
+const PORT = 8090;//process.env.PORT; 
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -19,22 +19,14 @@ const botName = 'Skylon Bot';
 const formatMessage = require('./utils/messages');
 
 const {
-    userJoin,
-    getCurrentUser,
-    userLeave,
-    getRoomUsers
-} = require('./utils/users');
-
-const {
-    joinGame,
-    startRoomGame,
-    getGames
+    addUsertoGames,
+    removeUserfromGames,
+    getGamefromGames,
+    getUserfromGames
 } = require('./utils/games');
 
-let gamez = require('./utils/game');
-let Game = gamez.Game;
 
-//------------------------------------------------------------variables
+//-------------------------------------------------------------------------variables
 
 // time variables
 var tickLengthMs = 1000 / 20;               //20 frames per second
@@ -46,17 +38,17 @@ var previousTick = Date.now();
 var actualTicks = 0;
 var secondCounter = 0;
 
-//-----------------------------------------------------------socket events --------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------socket events --------------------------------------------------------------------------------------------
 
 
 //run when client connects
 io.on('connection', (sock) => {
     sock.on('joinRoom', ({ username, room }) => {
-        const user = userJoin(sock.id, username, room);
-        sock.join(user.room);           //we join the right room for the user
 
-        //Join user to room game or create room game
-        joinGame(user);
+        const user = addUsertoGames(sock.id, username, room);
+
+        //join the correct room 
+        sock.join(user.room);
 
         //welcome current user
         sock.emit('message', formatMessage(botName, 'Welcome to Skylon!'));
@@ -64,32 +56,31 @@ io.on('connection', (sock) => {
         //broadcast whenever user connects
         sock.broadcast.to(user.room).emit('message', formatMessage(botName, `${user.username} has joined the chat`));
 
-        //send users and room info
-        io.to(user.room).emit('roomUsers', {
+        io.to(room).emit('roomUsers', {
             room: user.room,
-            users: getRoomUsers(user.room)
+            users: getGamefromGames(room).getGameUsers() 
         });
-
     });
 
     //listen for chatMessage
     sock.on('chatMessage', msg => {
-        const user = getCurrentUser(sock.id);
+        const user = getUserfromGames(sock.id);
         io.to(user.room).emit('message', formatMessage(user.username, msg));
-
     });
 
     //listen for game start
-    sock.on('startGame', msg => {
-        const user = getCurrentUser(sock.id);
-        io.to(user.room).emit('starting', msg);
-        startRoomGame(user);
+  //  sock.on('startGame', msg => {
+   //     const user = getCurrentUser(sock.id);
+   //     io.to(user.room).emit('starting', msg);
+        //startRoomGame(user);
 
-    });
+  //  });
 
     // Runs when client disconnects
     sock.on('disconnect', () => {
-        const user = userLeave(sock.id);
+       
+        const user = removeUserfromGames(sock.id);
+
 
         if (user) {
             io.to(user.room).emit(
@@ -99,19 +90,19 @@ io.on('connection', (sock) => {
 
             // Send users and room info
             io.to(user.room).emit('roomUsers', {
-                room: user.room,
-                users: getRoomUsers(user.room)
+                room: user.room, 
+                users: getGamefromGames(user.room).getGameUsers() 
             });
         }
     });
 
-    gameLoop(sock);
+    //gameLoop(sock);
 });
 
 server.listen(PORT, () => console.log(`Serving static from ${PORT}`));
 
 
-var gameLoop = function (sock) {
+var gameLoop = function () {
     var now = Date.now();
 
     actualTicks++;
@@ -119,7 +110,7 @@ var gameLoop = function (sock) {
         var delta = (now - previousTick) / 1000;
         previousTick = now;
 
-        update(delta,sock);
+        update();
 
         //console.log('delta', delta, '(target: ' + tickLengthMs + ' ms)', 'node ticks', actualTicks);
         actualTicks = 0;
@@ -132,7 +123,7 @@ var gameLoop = function (sock) {
     }
 }
 
-var update = function (delta,sock) {
+var update = function () {
     // treat this like a call back occuring every 50 ms?
 
     games = getGames();
