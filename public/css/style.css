@@ -1,207 +1,701 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
+    --light-color: #b8c6e0;
+    --main-blue: #d4e6f1;
+    --light-brown: #ededed;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	background-color: tan;
-	margin: 20px;
+
 }
 
 ul {
-	list-style: none;
+
 }
 
-a {
-	text-decoration: none;
-}
-
-.btn {
-	cursor: pointer;
-	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
-	border: 0;
-	font-size: 17px;
-}
 
 /* Chat Page */
 
 .chat-container {
-	max-width: 1100px;
+
 	background: #fff;
-	margin: 30px auto;
 	overflow: hidden;
+    background-color:lightpink;
+    
 }
 
 .chat-header {
-	background: var(--dark-color-a);
-	color: #fff;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	padding: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    background-color: var(--light-color);
 }
+
+.chat-title {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    left: 40%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.chat-leave {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    left: 10%;
+    color: black;
+    background-color: white;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-controls {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    left: 70%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
 
 .chat-main {
-	display: grid;
-	grid-template-columns: 1fr 3fr;
+position:absolute;
+height:60%;
+top:15%;
+width:100%;
+left:0%;
+background-color: white;
 }
+
 
 .chat-sidebar {
-	background: var(--dark-color-b);
-	color: #fff;
-	padding: 20px 20px 60px;
-	overflow-y: scroll;
+    position: absolute;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    width: 15%;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding: 10px 10px 10px;
 }
 
-.chat-sidebar h2 {
-	font-size: 20px;
-	background: rgba(0, 0, 0, 0.1);
-	padding: 10px;
-	margin-bottom: 20px;
-}
+    .chat-sidebar h2 {
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
 
-.chat-sidebar h3 {
-	margin-bottom: 15px;
-}
+    .chat-sidebar h3 {
+        margin-bottom: 15px;
+    }
 
-.chat-sidebar ul li {
-	padding: 10px 0;
-}
+    .chat-sidebar ul li {
+        padding: 10px 0;
+    }
 
 .chat-messages {
-	padding: 30px;
-	max-height: 500px;
-	overflow-y: scroll;
+    position: absolute;
+    width: 80%;
+    background-color: #e2edef;
+    top: 0%;
+    left: 15%;
+    height: 100%;
+    padding: 30px;
+    overflow-y: scroll;
 }
 
-.chat-messages .message {
-	padding: 10px;
-	margin-bottom: 15px;
-	background-color: var(--light-color);
-	border-radius: 5px;
-}
+    .chat-messages .message {
+        padding: 5px;
+        margin-bottom: 15px;
+        background-color: var(--light-color);
+        border-radius: 5px;
+    }
 
-.chat-messages .message .meta {
-	font-size: 15px;
-	font-weight: bold;
-	color: var(--dark-color-b);
-	opacity: 0.7;
-	margin-bottom: 7px;
-}
+        .chat-messages .message .meta {
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
 
-.chat-messages .message .meta span {
-	color: #777;
-}
+            .chat-messages .message .meta span {
+                color: darkslateblue;
+            }
 
 .chat-form-container {
-	padding: 20px 30px;
-	background-color: var(--dark-color-a);
+    position:absolute;
+    width:85%;
+    top:75%;
+    left:15%;
+    height:10%;
+    background-color:white;
 }
 
-.chat-form-container form {
-	display: flex;
+    .chat-form-container form {
+        display: flex;
+    }
+
+    .chat-form-container input[type='text'] {
+        font-size: 16px;
+        padding: 5px;
+        height: 40px;
+        flex: 1;
+    }
+
+    .chat-form-container button {
+        width: 15%;
+        height: auto;
+        background-color: var(--light-color);
+    }
+
+.chat-role-container {
+    background-color: var(--light-color);
+    height:15%;
+    top:85%;
+    left:0%;
+    width:100%;
+    position:absolute;
+
 }
 
-.chat-form-container input[type='text'] {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	flex: 1;
+.role-title {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    left: 40%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
-.role-choice-container {
-    background: var(--dark-color-b);
-    color: #fff;
-    padding: 25px 50px 75px;
+.role-engineer {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    left: 10%;
+    color: black;
+    background-color: white;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.role-pilot {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    left: 70%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 20%;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.hover:hover {
+    background-color: var(--light-color); /* Green */
+    color: black;
 }
 
 
-/* Join Page */
-.join-container {
-    max-width: 500px;
-    margin: 80px auto;
-    color: #fff;
+/* pilot display */
+
+.pilot-container{
+    position:absolute;
+    left:0%;
+    top:0%;
+    height:100%;
+    width:100%;
+    background-color: black;
 }
 
-.join-header {
-	text-align: center;
-	padding: 20px;
-	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+
+.game-header {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    top: 0%;
+    background-color: var(--main-blue);
 }
 
-.join-main {
-	padding: 30px 40px;
-	background: var(--dark-color-b);
+.game-timer {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: black;
+    background-color: white;
+    text-align: center;
+    width: 10%;
+    height: 60%;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 20px;
+}
+.game-title {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 20%;
+    height: 60%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.game-brief {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 10%;
+    height: 60%;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    border: 2px solid black;
+    cursor: pointer;
 }
 
-.join-main p {
-	margin-bottom: 20px;
+.pilot-main {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 80%;
+    top: 10%;
+    background-color: white;
 }
 
-.join-main .form-control {
-	margin-bottom: 20px;
+.pilot-abort {
+    position: absolute;
+    left: 0%;
+    width: 15%;
+    height: 100%;
+    top: 0%;
+    background-color: var(--light-brown);
 }
 
-.join-main label {
-	display: block;
-	margin-bottom: 5px;
+.abort {
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    width: 70%;
+    height: 10%;
+    left:15%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.header-abort{
+    top:20%;
+    background-color:transparent;
+    border:none;
+}
+.BIKF-abort {
+    top: 30%;
+    background: repeating-linear-gradient( 45deg, rgba(255, 0, 0, 0.23), rgba(255, 0, 0, 0.23) 10px, rgba(255, 216, 0, 0.68) 10px, rgba(255, 216, 0, 0.68) 20px );
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.CYHZ-abort {
+    top: 45%;
+    background: repeating-linear-gradient( 45deg, rgba(255, 0, 0, 0.23), rgba(255, 0, 0, 0.23) 10px, rgba(255, 216, 0, 0.68) 10px, rgba(255, 216, 0, 0.68) 20px );
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
-.join-main input[type='text'] {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
+.pilot-hud {
+    position: absolute;
+    left: 15%;
+    width: 60%;
+    height: 100%;
+    top: 0%;
+    background-color: white;
 }
 
-.join-main select {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
+.pilot-ihud {
+    position: absolute;
+    width: 100%;
+    height: 96%;
+    top: 2%;
+    left: 0%;
+    background-color: white;
 }
+.hud-outer {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    z-index: 9;
+}
+.hud-detail {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    opacity: 1;
+    z-index: 7;
+}
+.hud-titles {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    z-index: 10;
+}
+.hud-sky {
+    position: absolute;
+    overflow: hidden;
+    z-index: 6;
+    top:0%;
+    left:0%;
+    height:100%;
+}
+.sky-SVG{
+    height:100%;
+    width:auto;
+    position:absolute;
+    top:0%;
+    overflow:hidden;
 
-.pilot-class {
-    font-size: 16px;
-    padding: 5px;
-    height: 40px;
+}
+.roll-pointer-container {
+    position: absolute;
+    z-index: 8;
+    top: 18%;
+    left: 41%;
+    height: 19%;
+    width: 18%;
+}
+.roll-pointer {
+    position: absolute;
+    background-color: #efd500;
+    top: 0%;
+    left: 49%;
+    height: 100%;
+    width: 2%;
+}
+.roll-label-container {
+    position: absolute;
+    z-index: 10;
+    top: 10%;
+    left: 40%;
+    height: 14%;
+    width: 20%;
+}
+.roll-arrow-container {
+    position: absolute;
+    z-index: 10;
+    top: 8.4%;
+    left: 38.5%;
+    height: 3.5%;
+    width: 23%;
+}
+.roll-arrow {
+    position: absolute;
+    height: auto;
+    width: 12%;
+    top: 0%;
+    left: 44.5%;
+}
+.roll-button {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+    color: white;
+    font-size: 15px;
+    border: none;
+    background-color: Transparent;
+}
+.pitch-pointer-container {
+    position: absolute;
+    z-index: 8;
+    top: 38%;
+    left: 60%;
+    height: 24%;
+    width: 15%;
+}
+.pitch-pointer {
+    position: relative;
+    background-color: #efd500;
+    top: 47%;
+    left: 0%;
+    height: 3%;
     width: 100%;
 }
-
-.join-main .btn {
-	margin-top: 20px;
-	width: 100%;
+.pitch-label-container {
+    position: absolute;
+    z-index: 10;
+    top: 30%;
+    left: 68%;
+    height: 40%;
+    width: 11%;
+}
+.pitch-button {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+    color: white;
+    font-size: 15px;
+    border: none;
+    background-color: Transparent;
+}
+.pitch-arrow-container {
+    position: absolute;
+    top: 34%;
+    left: 76.5%;
+    height: 32%;
+    width: 2.1%;
+    z-index: 10;
+}
+.pitch-arrow {
+    position: absolute;
+    width: auto;
+    height: 8.2%;
+    top: 46%;
+    left: 0%;
+}
+.yaw-pointer-container {
+    position: absolute;
+    z-index: 8;
+    top: 63%;
+    left: 41%;
+    height: 19%;
+    width: 18%;
+}
+.yaw-pointer {
+    position: absolute;
+    background-color: #efd500;
+    top: 0%;
+    left: 49%;
+    height: 100%;
+    width: 2%;
+}
+.yaw-label-container {
+    position: absolute;
+    z-index: 10;
+    top: 76%;
+    left: 40%;
+    height: 14%;
+    width: 20%;
+}
+.yaw-arrow-container {
+    position: absolute;
+    z-index: 10;
+    top: 88.5%;
+    left: 38.5%;
+    height: 4.2%;
+    width: 23%;
+}
+.yaw-arrow {
+    position: absolute;
+    width: 12%;
+    height: auto;
+    top: 0%;
+    left: 44%;
+}
+.yaw-button {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+    color: white;
+    font-size: 15px;
+    border: none;
+    background-color: Transparent;
 }
 
-
-@media (max-width: 700px) {
-	.chat-main {
-		display: block;
-	}
-
-	.chat-sidebar {
-		display: none;
-	}
+.pilot-control {
+    background-color: var(--light-brown);
+    position: absolute;
+    top: 0%;
+    width: 25%;
+    left: 75%;
+    height: 100%;
 }
+
+.roll {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    top: 0%;
+    z-index: 2;
+}
+.roll-left {
+    height: 80%;
+    width: auto;
+    top: 10%;
+    left: 0%;
+    position: absolute;
+}
+.roll-right {
+    height: 80%;
+    width: auto;
+    top: 10%;
+    left: 60%;
+    position: absolute;
+}
+.roll-title {
+    height: 100%;
+    width: auto;
+    top: 0%;
+    left: 40%;
+    position: absolute;
+}
+.pitch {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    top: 30%;
+    z-index: 3;
+}
+.pitch-up {
+    height: 50%;
+    width: auto;
+    top: -10%;
+    left: 0%;
+    position: absolute;
+    z-index: 1;
+}
+.pitch-title {
+    height: 30%;
+    width: auto;
+    top: 35%;
+    left: -5%;
+    position: absolute;
+    z-index: 2;
+}
+.pitch-down {
+    height: 50%;
+    width: auto;
+    top: 60%;
+    left: 0%;
+    position: absolute;
+    z-index: 1;
+}
+.yaw {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    top: 70%;
+    z-index: 2;
+}
+.yaw-left {
+    height: 80%;
+    width: auto;
+    top: 10%;
+    left: 0%;
+    position: absolute;
+}
+.yaw-right {
+    height: 80%;
+    width: auto;
+    top: 10%;
+    left: 60%;
+    position: absolute;
+}
+.yaw-title {
+    height: 90%;
+    width: auto;
+    top: 5%;
+    left: 40%;
+    position: absolute;
+}
+
+.game-footer {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    top: 90%;
+    background-color: var(--main-blue);
+}
+
+.game-ready {
+    position: absolute;
+    left: 45%;
+    top: 10%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 10%;
+    height: 80%;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+    .game-ready:hover {
+        background-color: steelblue;
+        color: black;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

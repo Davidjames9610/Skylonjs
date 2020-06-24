@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="878"
+   overflow="hidden"
+   version="1.1"
+   id="svg152"
+   sodipodi:docname="fueltanks.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+  <metadata
+     id="metadata156">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview154"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.1934016"
+     inkscape:cx="234.4005"
+     inkscape:cy="525.65872"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg152" />
+  <defs
+     id="defs56">
+    <clipPath
+       id="clip0">
+      <path
+         d="M 41,149 H 920 V 619 H 41 Z"
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         id="path2" />
+    </clipPath>
+    <image
+       width="76"
+       height="75"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABLCAMAAADtTJGhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABIUExURQAAADMzM0RERFBQUFhYWFlZWV9fX2NjY2RkZGZmZnJycnV1dXd3d3l5eXx8fH19fX5+fn9/f4ODg4WFhYeHh4iIiImJiYyMjJ7mEU4AAAABdFJOUwBA5thmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAdElEQVRYR+3OSQ6AIBQEURxxwBGH+9/UBAms288Ck34HqJTK2dQloV3sPpMYfMw2YnOIbUYL1XuMXX71q6NlDMUYjjEcYzjGcIzhGMMxhmMMxxiOMRxjOMZwjOEYw/0kthihPsbWUcyGWBJvrCqSKF0sS0o9dvCFkqk0qGEAAAAASUVORK5CYII="
+       preserveAspectRatio="none"
+       id="img1" />
+    <clipPath
+       id="clip2">
+      <path
+         d="m 503,390 h 76 v 75 h -76 z"
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         id="path6" />
+    </clipPath>
+    <image
+       width="75"
+       height="75"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAMAAAAPkIrYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/UExURQAAADMzM0RERFFRUVlZWWNjY2RkZGZmZnJycnV1dXd3d3h4eHp6en19fX9/f4KCgoODg4aGhoiIiImJiYyMjHlLTIkAAAABdFJOUwBA5thmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAcklEQVRYR+3OSQ6AIBBEUVRwRBzvf1YTJLAuuxeY1DvAzzf18r0GF1v3qWFMrcNK+dzaFidjQ2ldafQrxxaELQxbGLYwbGHYwrCFYQvDFoYtDFsYtjBsYdjCsIX5Q2udZYbSCpPUnlsa3lbXaGhjq0LGPF5BSGiR3StXAAAAAElFTkSuQmCC"
+       preserveAspectRatio="none"
+       id="img3" />
+    <clipPath
+       id="clip4">
+      <path
+         d="m 357,301 h 75 v 75 h -75 z"
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         id="path10" />
+    </clipPath>
+    <linearGradient
+       x1="474.15601"
+       y1="499.08899"
+       x2="487.22501"
+       y2="605.52197"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       id="fill5">
+      <stop
+         offset="0"
+         stop-color="#234271"
+         id="stop13" />
+      <stop
+         offset="0.46"
+         stop-color="#D9D9D9"
+         id="stop15" />
+      <stop
+         offset="1"
+         stop-color="#7097D3"
+         id="stop17" />
+    </linearGradient>
+    <linearGradient
+       x1="602.69397"
+       y1="522.97101"
+       x2="606.05798"
+       y2="550.36902"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       id="fill6">
+      <stop
+         offset="0"
+         stop-color="#7F7F7F"
+         id="stop20" />
+      <stop
+         offset="0.25"
+         stop-color="#7F7F7F"
+         id="stop22" />
+      <stop
+         offset="0.46"
+         stop-color="#F2F2F2"
+         id="stop24" />
+      <stop
+         offset="0.8"
+         id="stop26" />
+      <stop
+         offset="1"
+         id="stop28" />
+    </linearGradient>
+    <linearGradient
+       x1="487.35501"
+       y1="162.733"
+       x2="474.28699"
+       y2="269.16599"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       id="fill7">
+      <stop
+         offset="0"
+         stop-color="#234271"
+         id="stop31" />
+      <stop
+         offset="0.46"
+         stop-color="#D9D9D9"
+         id="stop33" />
+      <stop
+         offset="1"
+         stop-color="#7097D3"
+         id="stop35" />
+    </linearGradient>
+    <linearGradient
+       x1="606.297"
+       y1="217.002"
+       x2="602.93298"
+       y2="244.39999"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect"
+       id="fill8">
+      <stop
+         offset="0"
+         stop-color="#7F7F7F"
+         id="stop38" />
+      <stop
+         offset="0.25"
+         stop-color="#7F7F7F"
+         id="stop40" />
+      <stop
+         offset="0.46"
+         stop-color="#F2F2F2"
+         id="stop42" />
+      <stop
+         offset="0.8"
+         id="stop44" />
+      <stop
+         offset="1"
+         id="stop46" />
+    </linearGradient>
+    <image
+       width="75"
+       height="75"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAMAAAAPkIrYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFUExURQAAADIyMkpKSllZWVpaWmFhYWJiYmNjY2RkZGVlZW9vb3FxcXV1dXd3d3h4eH5+fn9/f4CAgIKCgoeHh4iIiIqKioyMjM7vhZwAAAABdFJOUwBA5thmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAc0lEQVRYR+3OSQ6AIBBEUZxFnFHvf1QTJLguuxeY1DvAzzf5KgsNTWi5Q8MVW36UWlJrbWeZbX9bXRz96mQLwhaGLQxbGLYwbGHYwrCFYQvDFoYtDFsYtjBsYdjC/KFVWZnhbU21lE8tDU/L9hpcaGXImBtUj3B220so/AAAAABJRU5ErkJggg=="
+       preserveAspectRatio="none"
+       id="img9" />
+    <clipPath
+       id="clip10">
+      <path
+         d="m 503,301 h 75 v 75 h -75 z"
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         id="path50" />
+    </clipPath>
+    <clipPath
+       id="clip11">
+      <path
+         d="m 357,391 h 75 v 75 h -75 z"
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         id="path53" />
+    </clipPath>
+    <clipPath
+       id="clip0-1">
+      <path
+         id="path2-1"
+         clip-rule="evenodd"
+         fill-rule="evenodd"
+         d="m 610,465 h 286 v 63 H 610 Z" />
+    </clipPath>
+    <linearGradient
+       id="fill1"
+       spreadMethod="reflect"
+       gradientUnits="userSpaceOnUse"
+       y2="527.66199"
+       x2="867.42297"
+       y1="469.116"
+       x1="860.23401">
+      <stop
+         id="stop5"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0" />
+      <stop
+         id="stop7"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0.62" />
+      <stop
+         id="stop9"
+         stop-color="#FF0000"
+         offset="0.8" />
+      <stop
+         id="stop11"
+         stop-color="#FF0000"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="fill2"
+       spreadMethod="reflect"
+       gradientUnits="userSpaceOnUse"
+       y2="527.58502"
+       x2="638.62903"
+       y1="469.039"
+       x1="645.81702">
+      <stop
+         id="stop14"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0" />
+      <stop
+         id="stop16"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0.62" />
+      <stop
+         id="stop18"
+         stop-color="#FF0000"
+         offset="0.8" />
+      <stop
+         id="stop20-5"
+         stop-color="#FF0000"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     transform="rotate(-90,392.43625,526.56375)"
+     id="g150">
+    <path
+       d="m 135,303 c 51.915,0 94,35.593 94,79.5 0,43.907 -42.085,79.5 -94,79.5 C 83.0852,462 41,426.407 41,382.5 41,338.593 83.0852,303 135,303 Z"
+       fill="#abd958"
+       fill-rule="evenodd"
+       id="path58" />
+    <rect
+       x="130"
+       y="303"
+       width="75"
+       height="159"
+       fill="#abd958"
+       id="rect60" />
+    <path
+       d="m 825,462 c -51.915,0 -94,-35.593 -94,-79.5 0,-43.907 42.085,-79.5 94,-79.5 51.915,0 94,35.593 94,79.5 0,43.907 -42.085,79.5 -94,79.5 z"
+       fill="#abd958"
+       fill-rule="evenodd"
+       id="path62" />
+    <rect
+       x="694"
+       y="303"
+       width="138"
+       height="159"
+       fill="#abd958"
+       id="rect64" />
+    <path
+       d="m 694,383 c 0,43.63 -14.103,79 -31.5,79 -17.397,0 -31.5,-35.37 -31.5,-79 0,-43.63 14.103,-79 31.5,-79 17.397,0 31.5,35.37 31.5,79 z"
+       fill="#ff6600"
+       fill-rule="evenodd"
+       id="path66" />
+    <path
+       d="m 726,382.5 c 0,43.907 -14.103,79.5 -31.5,79.5 -17.397,0 -31.5,-35.593 -31.5,-79.5 0,-43.907 14.103,-79.5 31.5,-79.5 17.397,0 31.5,35.593 31.5,79.5 z"
+       fill="#ff6600"
+       fill-rule="evenodd"
+       id="path68" />
+    <rect
+       x="663"
+       y="303"
+       width="31"
+       height="159"
+       fill="#ff6600"
+       id="rect70" />
+    <path
+       d="M 217,428.456 651,428"
+       stroke="#ff6600"
+       stroke-width="8"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path72" />
+    <path
+       d="M 2.42919e-6,-4 152.876,-3.99991 v 8 L -2.42919e-6,4 Z M 148.876,-11.9999 l 24,12.000004987 -24,11.999995013 z"
+       fill="#ff6600"
+       transform="matrix(-4.37114e-8,-1,-1,4.37114e-8,492,427.876)"
+       id="path74" />
+    <path
+       d="M 5.00313e-6,-4 63.937,-3.99992 v 8 L -5.00313e-6,4 Z M 59.937,-11.9999 83.937,1.04987e-4 59.937,12.0001 Z"
+       fill="#abd958"
+       transform="matrix(-4.37114e-8,-1,-1,4.37114e-8,445,338.937)"
+       id="path76" />
+    <path
+       d="m 496,428 v 64.944 h -8 V 428 Z m 8,60.944 -12,24 -12,-24 z"
+       fill="#ff6600"
+       id="path78" />
+    <path
+       d="m 449,339 v 153.883 h -8 V 339 Z m 8,149.883 -12,24 -12,-24 z"
+       fill="#abd958"
+       id="path80" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(92.6955,393)"
+       id="text90">LH<tspan
+   font-size="16px"
+   x="25.1667"
+   y="5"
+   id="tspan82">2</tspan><tspan
+   x="713.073"
+   y="0"
+   id="tspan84">LH</tspan><tspan
+   font-size="16px"
+   x="738.23901"
+   y="5"
+   id="tspan86">2</tspan><tspan
+   x="567.258"
+   y="0"
+   id="tspan88">LOX</tspan></text>
+    <path
+       d="m 236,382 c 0,43.63 -14.103,79 -31.5,79 -17.397,0 -31.5,-35.37 -31.5,-79 0,-43.63 14.103,-79 31.5,-79 17.397,0 31.5,35.37 31.5,79 z"
+       fill="#ff6600"
+       fill-rule="evenodd"
+       id="path92" />
+    <path
+       d="m 268,382 c 0,43.63 -14.103,79 -31.5,79 -17.397,0 -31.5,-35.37 -31.5,-79 0,-43.63 14.103,-79 31.5,-79 17.397,0 31.5,35.37 31.5,79 z"
+       fill="#ff6600"
+       fill-rule="evenodd"
+       id="path94" />
+    <rect
+       x="205"
+       y="303"
+       width="31"
+       height="159"
+       fill="#ff6600"
+       id="rect96" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(201.783,393)"
+       id="text98">LOX</text>
+    <path
+       d="M 731.571,339 H 173"
+       stroke="#abd958"
+       stroke-width="8"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path100" />
+    <g
+       clip-path="url(#clip2)"
+       id="g104">
+      <use
+         width="100%"
+         height="100%"
+         xlink:href="#img1"
+         transform="translate(503,390)"
+         id="use102"
+         x="0"
+         y="0" />
+    </g>
+    <rect
+       x="511"
+       y="398"
+       width="60"
+       height="60"
+       fill="#ffffff"
+       id="rect106" />
+    <path
+       d="m 570.836,432 -40.807,0.306 -0.06,-8 40.807,-0.306 z m -36.747,8.276 -24.089,-11.82 23.909,-12.18 z"
+       fill="#ff6600"
+       id="path108" />
+    <g
+       clip-path="url(#clip4)"
+       id="g112">
+      <use
+         width="100%"
+         height="100%"
+         xlink:href="#img3"
+         transform="translate(357,301)"
+         id="use110"
+         x="0"
+         y="0" />
+    </g>
+    <rect
+       x="364"
+       y="309"
+       width="61"
+       height="60"
+       fill="#ffffff"
+       id="rect114" />
+    <path
+       d="m 363.978,335.334 40.281,-0.223 0.044,8 -40.281,0.223 z m 36.237,-8.201 24.066,11.867 -23.933,12.133 z"
+       fill="#abd958"
+       id="path116" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(719.369,538)"
+       id="text120">FWD TANKS<tspan
+   x="-603.79999"
+   y="0"
+   id="tspan118">AFT TANKS</tspan></text>
+    <path
+       d="m 368.23,512.095 215.12,0.596 6.534,53.216 -208.586,52.621 z"
+       fill="url(#fill5)"
+       fill-rule="evenodd"
+       id="path122"
+       style="fill:url(#fill5)" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="rotate(-6.9999815,4844.1199,-3266.4413)"
+       id="text124">ENG 2</text>
+    <path
+       d="m 584.285,525.231 38.501,9.178 -35.137,18.22 z"
+       fill="url(#fill6)"
+       fill-rule="evenodd"
+       id="path126"
+       style="fill:url(#fill6)" />
+    <path
+       d="m 381.429,149.727 208.585,52.62 -6.534,53.217 -215.12,0.596 z"
+       fill="url(#fill7)"
+       fill-rule="evenodd"
+       id="path128"
+       style="fill:url(#fill7)" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="rotate(6.9999815,-1565.9014,3644.3741)"
+       id="text130">ENG 1</text>
+    <path
+       d="m 587.887,214.742 35.138,18.219 -38.502,9.178 z"
+       fill="url(#fill8)"
+       fill-rule="evenodd"
+       id="path132"
+       style="fill:url(#fill8)" />
+    <g
+       clip-path="url(#clip10)"
+       id="g136">
+      <use
+         width="100%"
+         height="100%"
+         xlink:href="#img9"
+         transform="translate(503,301)"
+         id="use134"
+         x="0"
+         y="0" />
+    </g>
+    <rect
+       x="510"
+       y="308"
+       width="61"
+       height="61"
+       fill="#ffffff"
+       id="rect138" />
+    <path
+       d="m 571.303,342 -40.281,0.223 -0.045,-8 L 571.259,334 Z M 535.066,350.201 511,338.334 534.933,326.201 Z"
+       fill="#abd958"
+       id="path140" />
+    <g
+       clip-path="url(#clip11)"
+       id="g144">
+      <use
+         width="100%"
+         height="100%"
+         xlink:href="#img9"
+         transform="translate(357,391)"
+         id="use142"
+         x="0"
+         y="0" />
+    </g>
+    <rect
+       x="364"
+       y="398"
+       width="61"
+       height="60"
+       fill="#ffffff"
+       id="rect146" />
+    <path
+       d="m 363.97,424.456 40.807,-0.306 0.06,8 -40.807,0.306 z m 36.747,-8.276 24.089,11.82 -23.909,12.18 z"
+       fill="#ff6600"
+       id="path148" />
+  </g>
+</svg>

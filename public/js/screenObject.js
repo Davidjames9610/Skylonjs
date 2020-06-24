@@ -1,8 +1,8 @@
 // JavaScript source code
 
 function screenObject(w,h) {
-    this.w = 1680;
-    this.h = 1050;
+    this.w = w;
+    this.h = h;
     this.wc;
     this.hc;
     this.gcdvalue;
@@ -24,14 +24,14 @@ screenObject.prototype.calculateConstants = function () {
     var aw = this.w / gcdv;
     var ah = this.h / gcdv;
 
-    this.wc = this.w / 100 * 0.65;
+    this.wc = (this.w / 100) * 0.81;
     this.hc = (this.wc / aw) * ah;
 
     this.wc = Math.round(this.wc * 100) / 100;
     this.hc = Math.round(this.hc * 100) / 100;
 
-    //console.log(JSON.stringify(this.wc));
-    //console.log(JSON.stringify(this.hc));
+    console.log(JSON.stringify(this.wc));
+    console.log(JSON.stringify(this.hc));
 
 }
 

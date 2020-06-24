@@ -15,8 +15,6 @@ $(document).ready(function () {
     setSizeofDom();
 
 
-
-
 });
 
 function serverCommunication() {
@@ -88,10 +86,10 @@ function serverCommunication() {
 }
 
 function setSizeofDom() {
-    myScreen.calculateConstants(); 
 
     setSizeofFont(screen.width);
     setSizeofDomElements();
+    setButtonsUp();
 
 
     function setSizeofFont(width) {
@@ -122,12 +120,12 @@ function setSizeofDom() {
 
     function setSizeofDomElements() {
 
+        myScreen.calculateConstants();
         var containerHeight = 100 * myScreen.hc;
         var containerWidth = 100 * myScreen.wc;
         var halfContainerHeight = containerHeight / 2; //+ "px";
         var halfContainerWidth = containerWidth / 2; //+ "px";
 
-        $(".game-container").css("position", "absolute");
         $(".game-container").css("top", "50%");
         $(".game-container").css("left", "50%");
         $(".game-container").css("margin-top", -halfContainerHeight + "px");
@@ -136,7 +134,46 @@ function setSizeofDom() {
         $(".game-container").height(containerHeight);
         $(".game-container").css("border", "2px solid blue");
         $(".game-container").css("background-color", "white");
+        $(".game-container").css("position", "absolute");
 
+        //pilot display
+        var hudWidth = $(".pilot-ihud").width();
+        var offset = centerObject(($(".hud-outer").width()), hudWidth);
+        $(".hud-outer").css("left", offset + "px");
+        $(".hud-detail").css("left", offset + "px");
+        $(".hud-titles").css("left", offset + "px");
+
+        //position sky container and sky
+        var skyw = $(".hud-outer").width() * 0.7;
+        $(".hud-sky").width(skyw);
+        var offset = centerObject(skyw, hudWidth);
+        $(".hud-sky").css("left", offset + "px");
+        var offset = centerObject($(".sky-SVG").width(), skyw);
+        $(".sky-SVG").css("left", offset + "px");
+
+
+
+
+        
+
+
+
+    }
+
+    function setButtonsUp(){
+
+
+
+       // $(".chat-leave").on("click", () => {
+        //    "index.html"
+       // })
+
+
+
+    }
+
+    function centerObject(objectWidth, containerWidth) {
+        return (containerWidth - objectWidth) / 2;
     }
 }
 

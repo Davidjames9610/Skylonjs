@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="labelfuel.svg"
+   id="svg31"
+   version="1.1"
+   overflow="hidden"
+   height="63"
+   width="286">
+  <metadata
+     id="metadata35">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg31"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="21.078383"
+     inkscape:cx="129.3265"
+     inkscape:zoom="3.6678322"
+     showgrid="false"
+     id="namedview33"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs23">
+    <clipPath
+       id="clip0">
+      <path
+         id="path2"
+         clip-rule="evenodd"
+         fill-rule="evenodd"
+         d="M610 465 896 465 896 528 610 528Z" />
+    </clipPath>
+    <linearGradient
+       id="fill1"
+       spreadMethod="reflect"
+       gradientUnits="userSpaceOnUse"
+       y2="527.662"
+       x2="867.423"
+       y1="469.116"
+       x1="860.234">
+      <stop
+         id="stop5"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0" />
+      <stop
+         id="stop7"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0.62" />
+      <stop
+         id="stop9"
+         stop-color="#FF0000"
+         offset="0.8" />
+      <stop
+         id="stop11"
+         stop-color="#FF0000"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="fill2"
+       spreadMethod="reflect"
+       gradientUnits="userSpaceOnUse"
+       y2="527.585"
+       x2="638.629"
+       y1="469.039"
+       x1="645.817">
+      <stop
+         id="stop14"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0" />
+      <stop
+         id="stop16"
+         stop-opacity="0.458824"
+         stop-color="#FFCC00"
+         offset="0.62" />
+      <stop
+         id="stop18"
+         stop-color="#FF0000"
+         offset="0.8" />
+      <stop
+         id="stop20"
+         stop-color="#FF0000"
+         offset="1" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1">
+      <path
+         d="M 4.6866142,4.6866142 L 89.045669,4.6866142 L 89.045669,45.928819 L 4.6866142,45.928819 z"
+         id="path883" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <path
+     transform="translate(8.9868825,5.7350031)"
+     style="fill:none;stroke:#000000;stroke-width:0.937323px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     clip-path="url(#clipEmfPath1)"
+     d="M 4.6866142,4.6866142 H 67.955906 L 88.108346,24.839055 67.955906,44.991496 H 4.6866142 Z"
+     id="path889" />
+</svg>

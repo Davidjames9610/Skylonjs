@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="blackArrowDown.svg"
+   id="svg54"
+   version="1.1"
+   viewBox="0 0 39.687501 43.65625"
+   height="165"
+   width="150">
+  <sodipodi:namedview
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:current-layer="svg54"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="97.832911"
+     inkscape:cx="76.59189"
+     inkscape:zoom="3.2282942"
+     showgrid="true"
+     id="namedview99"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:document-rotation="0"
+     inkscape:document-units="px"
+     units="px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid283"
+       originx="-13.229167"
+       originy="-33.734375" />
+  </sodipodi:namedview>
+  <defs
+     id="defs48">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1">
+      <path
+         d="M 0,0 H 425.54457 V 425.54457 H 0 Z"
+         id="path56" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-8">
+      <path
+         d="M 0,0 H 425.54457 V 425.54457 H 0 Z"
+         id="path78" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-6"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-2">
+      <path
+         d="M 0,0 H 425.54457 V 425.54457 H 0 Z"
+         id="path96" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-8"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-4">
+      <path
+         d="M 0,0 H 388.98898 V 389.9263 H 0 Z"
+         id="path114" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-1"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-3">
+      <path
+         d="M 0,0 H 230.58142 V 226.83213 H 0 Z"
+         id="path132" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-0"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-9">
+      <path
+         d="M 0,0 H 265.26236 V 266.19969 H 0 Z"
+         id="path153" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-3"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-34">
+      <path
+         d="M 0,0 H 230.58142 V 226.83213 H 0 Z"
+         id="path171" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-9"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-1">
+      <path
+         d="m 14.997165,15.934488 h 2.811969 V 123.72661 h -2.811969 z"
+         id="path196" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-33"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-5">
+      <path
+         d="M 14.997165,14.997165 H 122.78929 v 2.811969 H 14.997165 Z"
+         id="path214" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-07"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-27">
+      <path
+         d="M 0,0 H 15.934488 V 15.934488 H 0 Z"
+         id="path232" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-4"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-37">
+      <path
+         d="M 0,0 H 15.934488 V 15.934488 H 0 Z"
+         id="path250" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-7"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-6">
+      <path
+         d="M 0,0 H 15.934488 V 15.934488 H 0 Z"
+         id="path268" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-40"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-32">
+      <path
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z"
+         id="path286" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-74"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-41">
+      <path
+         d="M 4.6866142,4.6866142 H 5.623937 V 11.247874 H 4.6866142 Z"
+         id="path347" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-91"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-64">
+      <path
+         d="M 4.6866142,4.6866142 H 5.623937 V 11.247874 H 4.6866142 Z"
+         id="path365" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-5"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       id="clipEmfPath1-32-4"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path286-8"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath410"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path408"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath414"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path412"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath418"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path416"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath422"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path420"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath426"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path424"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath430"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path428"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath434"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path432"
+         d="M 4.6866142,4.6866142 H 108.72945 V 25.307717 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipEmfPath1-64-1"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path365-5"
+         d="M 4.6866142,4.6866142 H 5.623937 V 11.247874 H 4.6866142 Z" />
+    </clipPath>
+    <clipPath
+       id="clipEmfPath1-27-6"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path232-2"
+         d="M 0,0 H 15.934488 V 15.934488 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-7">
+      <path
+         d="M 4.6866142,4.6866142 H 26.245039 V 108.72945 H 4.6866142 Z"
+         id="path541" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-70"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-45">
+      <path
+         d="M 0.93732283,0.93732283 H 134.97449 V 31.868976 H 0.93732283 Z"
+         id="path602" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-49"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-2"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-58">
+      <path
+         d="M 14.997165,4.6866142 H 29.994331 V 122.78929 H 14.997165 Z"
+         id="path711" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-23"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-92">
+      <path
+         d="M 14.997165,0 H 44.991496 V 134.03717 H 14.997165 Z"
+         id="path788" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-24"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-42"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-47"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-0">
+      <path
+         d="M -5.623937,0 H 21.558425 V 31.868976 H -5.623937 Z"
+         id="path1015" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-63"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-57">
+      <path
+         d="M 0.93732283,14.997165 H 134.97449 V 45.928819 H 0.93732283 Z"
+         id="path1102" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-37"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <pattern
+       id="EMFhbasepattern-48"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       id="clipPath103"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         ry="0"
+         y="3.491046"
+         x="18.615789"
+         height="112.45838"
+         width="80.696991"
+         id="rect105"
+         style="fill:#000000;stroke-width:0.30112" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-04">
+      <path
+         d="M 0,0 H 230.58142 V 226.83213 H 0 Z"
+         id="path107" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-10"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-77">
+      <path
+         d="M 10.310551,9.3732283 H 49.67811 V 207.14835 H 10.310551 Z"
+         id="path132-2" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-41"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1-03">
+      <path
+         d="M 0,0 H 425.54457 V 425.54457 H 0 Z"
+         id="path229" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern-08"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath279">
+      <rect
+         style="fill:#000000;stroke-width:0.294145"
+         id="rect281"
+         width="66.98822"
+         height="112.5776"
+         x="6.8336215"
+         y="0.17530665" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath287">
+      <rect
+         style="fill:#ff0000;stroke-width:0.428675"
+         id="rect289"
+         width="67.46875"
+         height="111.125"
+         x="6.8336215"
+         y="0.17530704" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath293">
+      <rect
+         style="fill:#ff0000;stroke-width:0.315174"
+         id="rect295"
+         width="65.925133"
+         height="111.125"
+         x="6.8108487"
+         y="0.17530704" />
+    </clipPath>
+    <clipPath
+       id="clipEmfPath1-20"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path299"
+         d="M 0,0 H 425.54457 V 425.54457 H 0 Z" />
+    </clipPath>
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern-708" />
+    <clipPath
+       id="clipEmfPath1-68"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path497"
+         d="M 0,0 H 425.54457 V 425.54457 H 0 Z" />
+    </clipPath>
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern-45" />
+    <clipPath
+       id="clipEmfPath1-73"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path757"
+         d="M 10.310551,9.3732283 H 49.67811 V 207.14835 H 10.310551 Z" />
+    </clipPath>
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern-51" />
+    <clipPath
+       id="clipEmfPath1-17"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path854"
+         d="M 0,0 H 230.58142 V 226.83213 H 0 Z" />
+    </clipPath>
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern-85" />
+  </defs>
+  <metadata
+     id="metadata51">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     transform="matrix(0.78406253,0,0,0.99589315,-3.8769742,-2.6349673)"
+     inkscape:transform-center-y="7.2760417"
+     d="M 30.253614,46.482113 17.59917,24.563973 4.9447258,2.6458346 l 25.3088882,-6e-7 25.308887,-7e-7 -12.654444,21.9181407 z"
+     inkscape:randomized="0"
+     inkscape:rounded="0"
+     inkscape:flatsided="false"
+     sodipodi:arg2="2.6179939"
+     sodipodi:arg1="1.5707963"
+     sodipodi:r2="14.612093"
+     sodipodi:r1="29.224186"
+     sodipodi:cy="17.257927"
+     sodipodi:cx="30.253614"
+     sodipodi:sides="3"
+     id="path1035"
+     style="fill:#000000;stroke-width:0.264583"
+     sodipodi:type="star" />
+</svg>

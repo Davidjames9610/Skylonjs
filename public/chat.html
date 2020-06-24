@@ -7,22 +7,29 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Skylon </title>
     <style>
-        .chat-display{
-            display: none;
+        .game-container{
+            display:block;
         }
-        .shared-display{
-            display: none;
+        .chat-container{
+            display:none;
         }
+        .pilot-container{
+            display:block;
+        }
+
         </style>
 </head>
 <body>
-    <div class="chat-display">
+    <div class="game-container">
         <div class="chat-container">
-            <header class="chat-header">
-                <h1><i class="fas fa-paper-plane"></i> Skylon</h1>
-                <a href="index.html" class="btn">Leave Room</a>
-            </header>
-            <main class="chat-main">
+            <div class="chat-header">
+                <button class="chat-title">SKYLON</button>
+                <button class="chat-leave hover" onclick="window.location.href='index.html';">
+                    Leave Room
+                </button>
+                <button class="chat-controls hover">Enter Game</button>
+            </div>
+            <div class="chat-main">
                 <div class="chat-sidebar">
                     <h3><i class="fas fa-comments"></i> Room Name:</h3>
                     <h2 id="room-name">JavaScript</h2>
@@ -30,7 +37,7 @@
                     <ul id="users"></ul>
                 </div>
                 <div class="chat-messages"></div>
-            </main>
+            </div>
             <div class="chat-form-container">
                 <form id="chat-form">
                     <input id="msg"
@@ -41,21 +48,142 @@
                     <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
                 </form>
             </div>
-            <div class="role-choice-container">
-                <h3>Please choose your role: </h3>
-                <br>
-                <button id="pilot_select" type="button" class="btn">Pilot</button>
-                <button id="engineer_select" type="button" class="btn">Engineer</button>
-                <br>
-                <br>
-                <button id="start_game" type="button" class="btn">START GAME</button>
+            <div class="chat-role-container">
+                <button class="role-engineer hover">Engineer</button>
+                <button class="role-title ">ROLE</button>
+                <button class="role-pilot hover">Pilot</button>
             </div>
         </div>
-    </div>
-    <div class="game-container">
-    </div>
-    <div class="shared-display">
-        <button class="fontbutton fontbody">VELOCITY</button>
+        <div class="pilot-container">
+            <div class="pilot game-header">
+                <button class="pilot game-timer hover">TIMER</button>
+                <button class="pilot game-title">ENGINEER DISPLAY</button>
+                <button class="pilot game-brief hover">BRIEF</button>
+            </div>
+            <div class="pilot-main">
+                <div class="pilot-abort">
+                    <button class="header-abort abort ">ABORT</button>
+                    <button class="BIKF-abort abort hover">BIKF</button>
+                    <button class="CYHZ-abort abort hover">CYHZ</button>
+                </div>
+                <div class="pilot-hud">
+                    <div class="pilot-ihud">
+                        <img class="hud-outer" src="./assets/hudbg1.svg"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="hud-detail" src="./assets/huddetail.svg"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="hud-titles" src="./assets/hudtitles.svg"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <div class="hud-sky">
+                            <img class="sky-SVG" src="./assets/sky.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+                        <div class="roll-pointer-container">
+                            <div class="roll-pointer">
+                            </div>
+                        </div>
+                        <div class="roll-label-container">
+                            <button class="roll-button">0</button>
+                        </div>
+                        <div class="roll-arrow-container">
+                            <img class="roll-arrow" src="./assets/blackArrowDown.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+                        <div class="yaw-pointer-container">
+                            <div class="yaw-pointer">
+                            </div>
+                        </div>
+                        <div class="yaw-label-container">
+                            <button class="yaw-button">0</button>
+                        </div>
+                        <div class="yaw-arrow-container">
+                            <img class="yaw-arrow" src="./assets/blackArrowUp.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+                        <div class="pitch-pointer-container">
+                            <div class="pitch-pointer">
+                            </div>
+                        </div>
+                        <div class="pitch-label-container">
+                            <button class="pitch-button">0</button>
+                        </div>
+                        <div class="pitch-arrow-container">
+                            <img class="pitch-arrow" src="./assets/blackArrowLeft.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="pilot-control">
+                    <div class="roll">
+                        <img class="roll-left" src="./assets/ButtonLeftArrow.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="roll-right" src="./assets/ButtonRightArrow.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="roll-title" src="./assets/Roll.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                    </div>
+                    <div class="pitch">
+                        <img class="pitch-down" src="./assets/ButtonDownArrow.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="pitch-up" src="./assets/ButtonUpArrow.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="pitch-title" src="./assets/pitch.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                    </div>
+                    <div class="yaw">
+                        <img class="yaw-left" src="./assets/ButtonLeftArrow.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="yaw-right" src="./assets/ButtonRightArrow.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                        <img class="yaw-title" src="./assets/yaw.png"
+                             alt="triangle with all three sides equal"
+                             height="100"
+                             width="100" />
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="pilot game-footer">
+                <button class="game-ready">READY</button>
+            </div>
+
+
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
