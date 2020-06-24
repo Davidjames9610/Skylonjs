@@ -675,6 +675,516 @@ background-color: white;
     }
 
 
+    /* eng display*/
+
+    .eng-container{
+
+        position:absolute;
+        top:0%;
+        left:0%;
+        height:100%;
+        width:100%;
+        background-color: black;
+
+    }
+
+.eng-main {
+    width: 100%;
+    height: 80%;
+    top:10%;
+    background-color: pink;
+    position: absolute;
+}
+
+.graphs-container {
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+}
+
+.vel-graph {
+    width: 80%;
+    height: 40%;
+    background-color: lightgray;
+    top: 5%;
+    left: 10%;
+    position: absolute;
+}
+.vel-up-arrow {
+    position: absolute;
+    width: 25%;
+    height: 35%;
+    top: 63%;
+    left: 73%;
+    background-color: red;
+}
+.vel-up-arrow-outline {
+    position: absolute;
+    width: 102%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+.vubv {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 60%;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+.vubt {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 40%;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+.vel-down-arrow {
+    position: absolute;
+    width: 25%;
+    height: 35%;
+    top: 2%;
+    left: 2%;
+    background-color: red;
+}
+.vel-down-arrow-outline {
+    position: absolute;
+    width: 101%;
+    height: 102%;
+    top: -1%;
+    left: -1%;
+}
+
+.vdbt {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 0%;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+.vdbv {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 20%;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+.alt-graph {
+    width: 80%;
+    height: 40%;
+    background-color: lightgrey;
+    top: 55%;
+    left: 10%;
+    position: absolute;
+}
+.canvas-container {
+    z-index: 10;
+    position: absolute;
+}
+.alt-up-arrow {
+    position: absolute;
+    width: 25%;
+    height: 35%;
+    top: 63%;
+    left: 73%;
+    background-color: red;
+    z-index: 8;
+}
+.aubt {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 40%;
+    background-color: transparent;
+    border: none;
+    z-index: 8;
+}
+.aubv {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 60%;
+    background-color: transparent;
+    border: none;
+    z-index: 8;
+}
+.alt-down-arrow {
+    position: absolute;
+    width: 25%;
+    height: 35%;
+    top: 2%;
+    left: 2%;
+    background-color: red;
+    z-index: 8;
+}
+.adbt {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 0%;
+    background-color: transparent;
+    border: none;
+    z-index: 8;
+}
+.adbv {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 40%;
+    top: 20%;
+    background-color: transparent;
+    border: none;
+    z-index: 8;
+}
+.alt-title {
+    background-color: transparent;
+    border: none;
+    top: 60%;
+    left: 10%;
+    height: 5%;
+    width: 80%;
+    position: absolute;
+    z-index: 2;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+.vel-title {
+    background-color: transparent;
+    border: none;
+    top: 5%;
+    left: 10%;
+    height: 5%;
+    width: 80%;
+    position: absolute;
+    z-index: 2;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+
+
+.cofg-container {
+    background-color: white;
+    top: 0%;
+    width: 20%;
+    height: 100%;
+    left: 35%;
+    position: absolute;
+}
+
+.cofg-box {
+    top: 20%;
+    height: 70%;
+    left: 38%;
+    width: 24%;
+    position: absolute;
+    background-color: darkred;
+}
+.cofg-box2 {
+    top: 5%;
+    height: 90%;
+    left: 0%;
+    width: 100%;
+    position: relative;
+    background-color: red;
+}
+.cofg-middle {
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    width: 140%;
+    background-color: black;
+    height: 2%;
+}
+.cofg-title {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    left: 0%;
+    height: auto;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+.cofg-50 {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 5%;
+    width: 20%;
+    height: auto;
+    font-size: 20px;
+    left: 120%;
+}
+.cofg-55 {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: auto;
+    font-size: 20px;
+    left: 120%;
+}
+.cofg-60 {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 95%;
+    width: 20%;
+    height: auto;
+    font-size: 20px;
+    left: 120%;
+}
+
+.fueltank-container {
+    background-color: white;
+    height: 100%;
+    width: 45%;
+    position: absolute;
+    left: 55%;
+    top: 0%;
+    z-index: 3;
+}
+
+.fuel-tanks {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    z-index: 10;
+}
+.fuel-fire {
+    height: auto;
+    position: absolute;
+    top: 61%;
+    z-index: 9;
+}
+.fuel-buttons {
+    height: 24.7%;
+    width: 18.4%;
+    top: 39.1%;
+    left: 40.8%;
+    position: absolute;
+    background-color: transparent;
+    z-index: 11;
+}
+.LH2fwd-button {
+    top: 0%;
+    left: 0%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: repeating-linear-gradient( 45deg, #cecece, #cecece 10px, #e1db61 10px,#e1db61 20px );
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+.LH2fwd-buttonON {
+    top: 0%;
+    left: 0%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: red;
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: none;
+}
+.LH2aft-button {
+    top: 67%;
+    left: 0%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: repeating-linear-gradient( 45deg, #cecece, #cecece 10px, #e1db61 10px,#e1db61 20px );
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+.LH2aft-buttonON {
+    top: 67%;
+    left: 0%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: red;
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: none;
+}
+.L0Xfwd-button {
+    top: 0%;
+    left: 55%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: repeating-linear-gradient( 45deg, #cecece, #cecece 10px, #e1db61 10px,#e1db61 20px );
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+.L0Xfwd-buttonON {
+    top: 0%;
+    left: 55%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: red;
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: none;
+}
+.LOXaft-button {
+    top: 67%;
+    left: 55%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: repeating-linear-gradient( 45deg, #cecece, #cecece 10px, #e1db61 10px,#e1db61 20px );
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+.LOXaft-buttonON {
+    top: 67%;
+    left: 55%;
+    width: 45%;
+    height: 33%;
+    position: absolute;
+    text-align: center;
+    background: red;
+    border: 4px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    display: none;
+}
+.LH2fwdlabel {
+    position: absolute;
+    height: 8%;
+    top: 8%;
+    left: 25%;
+    width: 15%;
+}
+.LH2fwdlabel-content {
+    position: absolute;
+    height: 8%;
+    top: 8%;
+    left: 23%;
+    width: 15%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+.LOXfwdlabel {
+    position: absolute;
+    height: 8%;
+    top: 23%;
+    left: 25%;
+    width: 15%;
+}
+.LOXfwdlabel-content {
+    position: absolute;
+    height: 8%;
+    top: 23%;
+    left: 23%;
+    width: 15%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+.LH2aftlabel {
+    position: absolute;
+    height: 8%;
+    top: 75%;
+    left: 25%;
+    width: 15%;
+}
+.LH2aftlabel-content {
+    position: absolute;
+    height: 8%;
+    top: 75%;
+    left: 23%;
+    width: 15%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+.LOXaftlabel {
+    position: absolute;
+    height: 8%;
+    top: 87%;
+    left: 25%;
+    width: 15%;
+}
+.LOXaftlabel-content {
+    position: absolute;
+    height: 8%;
+    top: 87%;
+    left: 23%;
+    width: 15%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

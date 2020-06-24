@@ -14,6 +14,10 @@
             display:none;
         }
         .pilot-container{
+            display:none;
+        }
+
+        .eng-container{
             display:block;
         }
 
@@ -57,7 +61,7 @@
         <div class="pilot-container">
             <div class="pilot game-header">
                 <button class="pilot game-timer hover">TIMER</button>
-                <button class="pilot game-title">ENGINEER DISPLAY</button>
+                <button class="pilot game-title">PILOT DISPLAY</button>
                 <button class="pilot game-brief hover">BRIEF</button>
             </div>
             <div class="pilot-main">
@@ -179,10 +183,125 @@
                 </div>
             </div>
             <div class="pilot game-footer">
-                <button class="game-ready">READY</button>
+                <button class="pilot game-ready">READY</button>
             </div>
+        </div>
+
+        <div class="eng-container">
+            <div class="eng game-header">
+                <button class="eng game-timer hover">TIMER</button>
+                <button class="eng game-title">ENGINEER DISPLAY</button>
+                <button class="eng game-brief hover">BRIEF</button>
+            </div>
+            <div class="eng-main">
+                <div class="graphs-container">
+                    <button class="vel-title">VELOCITY</button>
+                    <div class="vel-graph">
+                        <div class="canvas-container">
+                            <canvas id="VelCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                        </div>
+                        <div class="vel-up-arrow">
+                            <button class="vubt fontbody">VELOCITY</button>
+                            <button class="vubv fontbody">-20</button>
+                            <img class="vel-up-arrow-outline" src="./assets/arrowup.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+                        <div class="vel-down-arrow">
+                            <button class="vdbt fontbody">VELOCITY</button>
+                            <button class="vdbv fontbody">+50</button>
+                            <img class="vel-down-arrow-outline" src="./assets/arrowdown.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+                    </div>
+                    <button class="alt-title">ALTITUDE</button>
+                    <div class="alt-graph">
+                        <div class="canvas-container">
+                            <canvas id="AltCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                        </div>
+                        <div class="alt-up-arrow">
+                            <button class="aubt fontbody">ALTITUDE</button>
+                            <button class="aubv fontbody">-20</button>
+                            <img class="vel-up-arrow-outline" src="./assets/arrowup.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+
+                        </div>
+                        <div class="alt-down-arrow">
+                            <button class="adbt fontbody">ALTITUDE</button>
+                            <button class="adbv fontbody">+50</button>
+                            <img class="vel-down-arrow-outline" src="./assets/arrowdown.svg"
+                                 alt="triangle with all three sides equal"
+                                 height="100"
+                                 width="100" />
+                        </div>
+                    </div>
 
 
+                </div>
+                <div class=cofg-container>
+                    <div class="cofg-box">
+                        <div class="cofg-box2">
+                            <div class="cofg-middle"></div>
+                        </div>
+                        <button class="cofg-50">50</button>
+                        <button class="cofg-55">55</button>
+                        <button class="cofg-60">60</button>
+                    </div>
+                    <button class="cofg-title">AFT C of G</button>
+                </div>
+                <div class="fueltank-container">
+                    <img class="fuel-tanks" src="./assets/fueltanks.svg"
+                         alt="triangle with all three sides equal"
+                         height="100"
+                         width="100" />
+                    <img class="fuel-fire" src="./assets/fueltankfire.svg"
+                         alt="triangle with all three sides equal"
+                         height="100"
+                         width="100" />
+                    <div class="fuel-buttons">
+                        <button class="LH2fwd-button">OFF</button>
+                        <button class="LH2fwd-buttonON">ON</button>
+
+                        <button class="LH2aft-button">OFF</button>
+                        <button class="LH2aft-buttonON">ON</button>
+
+                        <button class="L0Xfwd-button">OFF</button>
+                        <button class="L0Xfwd-buttonON">ON</button>
+
+                        <button class="LOXaft-button">OFF</button>
+                        <button class="LOXaft-buttonON">ON</button>
+                    </div>
+                    <img class="LH2fwdlabel" src="./assets/label.svg"
+                         alt="triangle with all three sides equal"
+                         height="100"
+                         width="100" />
+                    <button class="LH2fwdlabel-content">100%</button>
+                    <img class="LOXfwdlabel" src="./assets/label.svg"
+                         alt="triangle with all three sides equal"
+                         height="100"
+                         width="100" />
+                    <button class="LOXfwdlabel-content">90%</button>
+                    <img class="LH2aftlabel" src="./assets/label.svg"
+                         alt="triangle with all three sides equal"
+                         height="100"
+                         width="100" />
+                    <button class="LH2aftlabel-content">80%</button>
+                    <img class="LOXaftlabel" src="./assets/label.svg"
+                         alt="triangle with all three sides equal"
+                         height="100"
+                         width="100" />
+                    <button class="LOXaftlabel-content">70%</button>
+
+                </div>
+            </div>
+            <div class="eng game-footer">
+                <button class="eng game-ready">READY</button>
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
