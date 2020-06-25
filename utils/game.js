@@ -1,19 +1,25 @@
 
 
 //game.js
-
+var user = require('./user.js');
 
 
 module.exports = function (room) {
     //game variables
     this.room = room;
     this.users = [];
+    this.start = false;
+    this.time = 0;
 
     //add user to game room 
     this.addUser = function (id, username, room) {
-        const user = { id, username, room };
-        this.users.push(user);
-        return user;
+
+        var newUser = new user(id, username, room);
+        this.users.push(newUser);
+
+        //const user = { id, username, room};
+        //this.users.push(user);
+        return newUser;
     }
 
     //get user in game room with id
@@ -21,7 +27,7 @@ module.exports = function (room) {
         return this.users.find(user => user.id === id);
     }
 
-    this.removeUserfromGame = function(id) {
+    this.removeUserfromGame = function (id) {
 
         const index = this.users.findIndex(user => user.id === id);
 
@@ -36,11 +42,11 @@ module.exports = function (room) {
         return len;
     }
 
-    this.getGameUsers = function() {
+    this.getGameUsers = function () {
         return this.users;
     }
 
-    this.getUserfromGame = function(id){
+    this.getUserfromGame = function (id) {
 
         const index = this.users.findIndex(user => user.id === id);
 
@@ -49,11 +55,13 @@ module.exports = function (room) {
         } else {
             return false;               //this game does not contain users with the given id
         }
-        
+
     }
 
-
     this.startGame = function () {
+
+        //start game when ready function is called
+        this.start = true;
 
 
     }

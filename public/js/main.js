@@ -5,18 +5,29 @@ const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
 import screenObject from './screenObject.js';
+
 var myScreen = new screenObject(screen.width, screen.height);
 
+//local variables
+var roll = "null";
+var start = false;
+var secondcount = 0;
+var seconds = 0;
+var time = 0;
+
+//offsets for the svg objects when they move, the must be kept track of
 
 
 $(document).ready(function () {
 
     serverCommunication();
     setSizeofDom();
-
+    setButtonsUp();
 
 });
 
+//update step must be called within server communication code
+// static code:
 function serverCommunication() {
 
     //  Get username and room from URL
@@ -60,6 +71,27 @@ function serverCommunication() {
     });
 
 
+    //get room and users
+    socket.on('update', gameobj => {
+
+        //this is called every 20 ms for all clients
+
+        time = JSON.stringify(gameobj.time);
+
+        if (start){ updateGame(); }
+        //console.log(time);
+
+        //update(gameobj);
+        //this will be called every 20 frames per second , we will use it to update the positions of everything. The obj is shared between the engineer and the pilot
+        //It wil contain informaiton which allows the displays to be drawn in the right location, how?
+
+    });
+
+    socket.on('startRoomGame', msg => {
+        start = true;
+    });
+
+
     function outputMessage(message) {
         const div = document.createElement('div');
         div.classList.add('message');
@@ -83,14 +115,17 @@ function serverCommunication() {
     }
 
 
+
+
+
+    
 }
 
 function setSizeofDom() {
 
+    //these are main size operations which can happen once in the background
     setSizeofFont(screen.width);
     setSizeofDomElements();
-    setButtonsUp();
-
 
     function setSizeofFont(width) {
 
@@ -136,50 +171,96 @@ function setSizeofDom() {
         $(".game-container").css("background-color", "white");
         $(".game-container").css("position", "absolute");
 
-        //pilot display
-        var hudWidth = $(".pilot-ihud").width();
-        var offset = centerObject(($(".hud-outer").width()), hudWidth);
-        $(".hud-outer").css("left", offset + "px");
-        $(".hud-detail").css("left", offset + "px");
-        $(".hud-titles").css("left", offset + "px");
-
-        //position sky container and sky
-        var skyw = $(".hud-outer").width() * 0.7;
-        $(".hud-sky").width(skyw);
-        var offset = centerObject(skyw, hudWidth);
-        $(".hud-sky").css("left", offset + "px");
-        var offset = centerObject($(".sky-SVG").width(), skyw);
-        $(".sky-SVG").css("left", offset + "px");
-
-        //Engineer display
-        drawGraphs();
-
-        var fuel_container = $(".fueltank-container").width();
-        var fuel_tank = $(".fuel-tanks").width();
-        var offset = centerObject(fuel_tank, fuel_container);
-        $(".fuel-tanks").css("left", offset + "px");
-        $(".fuel-fire").css("width", fuel_tank + "px");
-        $(".fuel-fire").css("left", offset + "px");
-
-        
-
-    }
-
-    function setButtonsUp(){
-
-
-
-       // $(".chat-leave").on("click", () => {
-        //    "index.html"
-       // })
-
 
 
     }
 
-    function centerObject(objectWidth, containerWidth) {
-        return (containerWidth - objectWidth) / 2;
-    }
+}
+
+function setButtonsUp() {
+
+    //chat room 
+    $(".chat-enterGame").on("click", () => {
+
+        if (roll == "null") {
+            alert("please choose a role!");
+        } else if (roll == "Engineer") {
+            $(".chat-container").css("display", "none");
+            $(".eng-container").css("display", "block");
+            loadEngineerdisplay()       //call this every update step as well?
+
+
+        } else if (roll == "Pilot") {
+            $(".chat-container").css("display", "none");
+            $(".pilot-container").css("display", "block");
+            loadPilotdisplay()
+        }
+
+    })
+
+    $(".role-engineer").on("click", () => {
+        //alert("role-engineer!");
+        roll = "Engineer";
+        const msg = "I choose to be a Engineer";
+        socket.emit('chatMessage', msg);
+
+    })
+
+    $(".role-pilot").on("click", () => {
+        roll = "Pilot";
+        const msg = "I choose to be a Pilot";
+        socket.emit('chatMessage', msg);
+    })
+
+
+    $(".game-ready").on("click", () => {
+        //alert("game ready!");
+        var msg = true;
+
+        socket.emit('startRequest', msg); 
+
+        //now emit message to check if the other players are ready...
+
+    })
+
+    //navigation inside game display
+
+    $(".game-brief").on("click", () => {
+        $(".brief-display").css("display", "block");
+
+    })
+
+    $(".brief-close").on("click", () => {
+        $(".brief-display").css("display", "none");
+    })
+
+
+    $(".chat-return").on("click", () => {
+        if (roll == "Engineer") {
+            $(".chat-container").css("display", "block");
+            $(".eng-container").css("display", "none");
+        } else if (roll == "Pilot") {
+            $(".chat-container").css("display", "block");
+            $(".pilot-container").css("display", "none");
+        }
+
+    })
+
+}
+
+
+function loadEngineerdisplay() {
+
+    //Engineer display
+    drawGraphs();
+
+    var fuel_container = $(".fueltank-container").width();
+    var fuel_tank = $(".fuel-tanks").width();
+    var offset = centerObject(fuel_tank, fuel_container);
+    $(".fuel-tanks").css("left", offset + "px");
+    $(".fuel-fire").css("width", fuel_tank + "px");
+    $(".fuel-fire").css("left", offset + "px");
+
 
     function drawGraphs() {
 
@@ -234,8 +315,48 @@ function setSizeofDom() {
         ctx.stroke();
 
     }
+}
+
+function loadPilotdisplay() {
+
+    //pilot display
+    var hudWidth = $(".pilot-ihud").width();
+    var offset = centerObject(($(".hud-outer").width()), hudWidth);
+    $(".hud-outer").css("left", offset + "px");
+    $(".hud-detail").css("left", offset + "px");
+    $(".hud-titles").css("left", offset + "px");
+
+    //position sky container and sky
+    var skyw = $(".hud-outer").width() * 0.7;
+    $(".hud-sky").width(skyw);
+    var offset = centerObject(skyw, hudWidth);
+    $(".hud-sky").css("left", offset + "px");
+    var offset = centerObject($(".sky-SVG").width(), skyw);
+    $(".sky-SVG").css("left", offset + "px");
 
 }
 
+function centerObject(objectWidth, containerWidth) {
+    return (containerWidth - objectWidth) / 2;
+}
+
+//dynamic code
+
+function updateGame() {
+    //update positions and times
+    secondcount = secondcount + 1;
+
+    if (secondcount > 20) {
+        secondcount = 0;
+        seconds = seconds + 1;
+        $(".game-timer").html(seconds);
+
+        console.log(JSON.stringify(seconds));
+    }
 
 
+    
+
+
+
+}

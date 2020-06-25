@@ -11,14 +11,17 @@
             display:block;
         }
         .chat-container{
-            display:none;
+            display:block;
         }
         .pilot-container{
             display:none;
         }
 
         .eng-container{
-            display:block;
+            display:none;
+        }
+        .brief-display{
+            display:none;
         }
 
         </style>
@@ -31,7 +34,7 @@
                 <button class="chat-leave hover" onclick="window.location.href='index.html';">
                     Leave Room
                 </button>
-                <button class="chat-controls hover">Enter Game</button>
+                <button class="chat-enterGame hover">Enter Game</button>
             </div>
             <div class="chat-main">
                 <div class="chat-sidebar">
@@ -60,7 +63,7 @@
         </div>
         <div class="pilot-container">
             <div class="pilot game-header">
-                <button class="pilot game-timer hover">TIMER</button>
+                <button class="pilot game-timer ">TIMER</button>
                 <button class="pilot game-title">PILOT DISPLAY</button>
                 <button class="pilot game-brief hover">BRIEF</button>
             </div>
@@ -184,12 +187,40 @@
             </div>
             <div class="pilot game-footer">
                 <button class="pilot game-ready">READY</button>
+                <button class="pilot chat-return">CHAT</button>
+            </div>
+            <div class="pilot brief-display">
+                <div class="brief-header">
+                    <button class="brief-close hover">CLOSE</button>
+                    <button class="brief-title">PILOT BRIEF</button>
+                </div>
+                <div class="brief-content">
+                    <div class="content-storyline">
+                        <button class="storyline-title">Storyline</button>
+                        <h3>What is Skylon:</h3>
+                        <p>
+                            Skylon is a proposed hypersonic future flight vehicle powered by two SABRE engine assemblies burning a combination of liquid Hydrogen (LH2) and initially atmospheric Oxygen (O2) and then switching to Liquid Oxygen (LOX) at higher altitude.
+                            It is operated by a dyadic team:  <span style="color:black;font-weight:bold">Pilot</span> and <span style="color:black;font-weight:bold">Engineer</span>  each with a specific role, though mutually interdependent.
+                            The process has substantial automation, however due to the concerns of automation dependence, the two operators have specific roles to allow the flight to operate safely.
+                            There are no windows for the operating crew.
+                            The mission is a passenger flight from London to New York with a flight time of 37 minutes.
+                            In order to accomplish the flight successfully, the crew has to reach the target altitude velocity point at Main Engine Cutoff (MECO – propellant zero)
+                        </p>
+                    </div>
+                    <div class="content-role">
+                        <button class="content-role-title">Pilot instructions</button>
+                        <p>
+                            The role of the pilot is to follow the Flight Directors via the pitch, roll (and yaw to a very lesser extent – there is no reason to imagine that an asymmetric trust condition would evolve). The actual control transitions would not be visible to the pilot, canards would only be effective up to Gaseous Oxygen (GOX) / Liquid Oxygen (LOX) transition, and vector thruster would operate beyond. The vehicle will be stable in the atmosphere, however “atmospheric disturbance” can be present up to 12000m on a declining scale. This disturbance will possibly displace the trajectory, but certainly be visible on the rate indicators on the ‘8-Ball’. Above the GOX/LOX transition, there is no stability from drag, so the control response will evolve to classic vacuum response, every change in attitude requires a counter-reactive input to kill the rate.
+                        </p>
+
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="eng-container">
             <div class="eng game-header">
-                <button class="eng game-timer hover">TIMER</button>
+                <button class="eng game-timer">TIMER</button>
                 <button class="eng game-title">ENGINEER DISPLAY</button>
                 <button class="eng game-brief hover">BRIEF</button>
             </div>
@@ -301,6 +332,34 @@
             </div>
             <div class="eng game-footer">
                 <button class="eng game-ready">READY</button>
+                <button class="eng chat-return">CHAT</button>
+            </div>
+            <div class="eng brief-display">
+                <div class="brief-header">
+                    <button class="brief-close hover">CLOSE</button>
+                    <button class="brief-title">ENGINEER BRIEF</button>
+                </div>
+                <div class="brief-content">
+                    <div class="content-storyline">
+                        <button class="storyline-title">Storyline</button>
+                        <h3>What is Skylon:</h3>
+                        <p>
+                            Skylon is a proposed hypersonic future flight vehicle powered by two SABRE engine assemblies burning a combination of liquid Hydrogen (LH2) and initially atmospheric Oxygen (O2) and then switching to Liquid Oxygen (LOX) at higher altitude.
+                            It is operated by a dyadic team:  <span style="color:black;font-weight:bold">Pilot</span> and <span style="color:black;font-weight:bold">Engineer</span>  each with a specific role, though mutually interdependent.
+                            The process has substantial automation, however due to the concerns of automation dependence, the two operators have specific roles to allow the flight to operate safely.
+                            There are no windows for the operating crew.
+                            The mission is a passenger flight from London to New York with a flight time of 37 minutes.
+                            In order to accomplish the flight successfully, the crew has to reach the target altitude velocity point at Main Engine Cutoff (MECO – propellant zero)
+                        </p>
+                    </div>
+                    <div class="content-role">
+                        <button class="content-role-title">Engineer instructions</button>
+                        <p>
+                            The role of the pilot is to follow the Flight Directors via the pitch, roll (and yaw to a very lesser extent – there is no reason to imagine that an asymmetric trust condition would evolve). The actual control transitions would not be visible to the pilot, canards would only be effective up to Gaseous Oxygen (GOX) / Liquid Oxygen (LOX) transition, and vector thruster would operate beyond. The vehicle will be stable in the atmosphere, however “atmospheric disturbance” can be present up to 12000m on a declining scale. This disturbance will possibly displace the trajectory, but certainly be visible on the rate indicators on the ‘8-Ball’. Above the GOX/LOX transition, there is no stability from drag, so the control response will evolve to classic vacuum response, every change in attitude requires a counter-reactive input to kill the rate.
+                        </p>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

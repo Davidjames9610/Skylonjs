@@ -22,7 +22,8 @@ const {
     addUsertoGames,
     removeUserfromGames,
     getGamefromGames,
-    getUserfromGames
+    getUserfromGames,
+    getGamesfromGames
 } = require('./utils/games');
 
 
@@ -68,13 +69,23 @@ io.on('connection', (sock) => {
         io.to(user.room).emit('message', formatMessage(user.username, msg));
     });
 
-    //listen for game start
-  //  sock.on('startGame', msg => {
-   //     const user = getCurrentUser(sock.id);
-   //     io.to(user.room).emit('starting', msg);
-        //startRoomGame(user);
 
-  //  });
+
+    //listen for game start
+    sock.on('startRequest', msg => {
+        const user = getUserfromGames(sock.id);
+        getGamefromGames(user.room).startGame();
+
+        io.to(user.room).emit('startRoomGame', msg);
+        //startRoomGame(user);
+        console.log("start request");
+        console.log(JSON.stringify(sock.id));
+
+
+
+
+
+    });
 
     // Runs when client disconnects
     sock.on('disconnect', () => {
@@ -97,10 +108,12 @@ io.on('connection', (sock) => {
     });
 
     //gameLoop(sock);
+    gameLoop();
 });
 
 server.listen(PORT, () => console.log(`Serving static from ${PORT}`));
 
+//gameLoop();     //called once at the start 
 
 var gameLoop = function () {
     var now = Date.now();
@@ -124,23 +137,31 @@ var gameLoop = function () {
 }
 
 var update = function () {
-    // treat this like a call back occuring every 50 ms?
 
-    games = getGames();
+    // treat this like a call back occuring every 20 frames per second, doesnt stop
+    // first call update in all games...
+    games = getGamesfromGames();
 
     if (games.length > 0) {
-        secondCounter = secondCounter + 1;
 
+        //secondCounter = secondCounter + 1;
         //console.log(games.length);
-        for (var i = 0; i < games.length; i++) {
 
+        for (var i = 0; i < games.length; i++) {
+            io.to(games[i].room).emit('update', games[i]);
+            //send update to client along with game object 
+
+            /*
             if (secondCounter > 20) {
                 //second timer
                 secondCounter = 0;
-                games[i].updateTime();
-                io.to(games[i].room).emit('update', games[i]);
+                console.log("time update");         //will this be every second?
+
+                //games[i].updateTime();
+                //io.to(games[i].room).emit('update', games[i]);
             }
-        }
+            */
+       }
     }
 }
 

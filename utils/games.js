@@ -15,13 +15,19 @@ function addUsertoGames(id, username, room) {
     const msg2 = JSON.stringify(games.length);
     console.log(msg2);
 
-    //A game with the correct room now definetly exists
+    //A game within the correct room now definetly exists
     return getGamefromGames(room).addUser(id, username, room);       //should return the newly added user
 
 }
 
 function getGamefromGames(room) {
     return games.find(game => game.room === room);
+}
+
+function getGamesfromGames() {
+
+    return games;
+
 }
 
 function removeUserfromGames(id) {
@@ -81,6 +87,7 @@ module.exports = {
     addUsertoGames,
     removeUserfromGames,
     getGamefromGames,
-    getUserfromGames
+    getUserfromGames,
+    getGamesfromGames
 };
 
