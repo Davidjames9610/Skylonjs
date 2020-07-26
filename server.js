@@ -74,17 +74,12 @@ io.on('connection', (sock) => {
     //listen for game start
     sock.on('startRequest', msg => {
         const user = getUserfromGames(sock.id);
+
+        //use user x request to set game start to true
         getGamefromGames(user.room).startGame();
 
-        io.to(user.room).emit('startRoomGame', msg);
-        //startRoomGame(user);
-        console.log("start request");
-        console.log(JSON.stringify(sock.id));
-
-
-
-
-
+        //tell all users in the same room that the game is starting 
+        io.to(user.room).emit('startRoomGame', msg);  
     });
 
     // Runs when client disconnects
@@ -148,19 +143,24 @@ var update = function () {
         //console.log(games.length);
 
         for (var i = 0; i < games.length; i++) {
-            io.to(games[i].room).emit('update', games[i]);
-            //send update to client along with game object 
 
-            /*
-            if (secondCounter > 20) {
-                //second timer
-                secondCounter = 0;
-                console.log("time update");         //will this be every second?
+            //check to see if game has started
+            currentgame = games[i];
 
-                //games[i].updateTime();
-                //io.to(games[i].room).emit('update', games[i]);
+            if (currentgame.start == true) {
+                io.to(currentgame.room).emit('update', currentgame);
+                currentgame.count ++;
+
+                if (currentgame.count > 20) {
+
+                    currentgame.incTime();
+                    io.to(currentgame.room).emit('Timeupdate', currentgame.time);
+                    currentgame.count = 0;
+                }
+
             }
-            */
+
+ 
        }
     }
 }

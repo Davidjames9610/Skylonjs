@@ -186,7 +186,7 @@
                 </div>
             </div>
             <div class="pilot game-footer">
-                <button class="pilot game-ready">READY</button>
+                <button class="pilot game-ready">START GAME!</button>
                 <button class="pilot chat-return">CHAT</button>
             </div>
             <div class="pilot brief-display">
@@ -231,6 +231,7 @@
                         <div class="canvas-container">
                             <canvas id="VelCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
                         </div>
+                        <div class="vel-circle"></div>
                         <div class="vel-up-arrow">
                             <button class="vubt fontbody">VELOCITY</button>
                             <button class="vubv fontbody">-20</button>
@@ -253,6 +254,7 @@
                         <div class="canvas-container">
                             <canvas id="AltCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
                         </div>
+                        <div class="alt-circle"></div>
                         <div class="alt-up-arrow">
                             <button class="aubt fontbody">ALTITUDE</button>
                             <button class="aubv fontbody">-20</button>
@@ -278,6 +280,10 @@
                     <div class="cofg-box">
                         <div class="cofg-box2">
                             <div class="cofg-middle"></div>
+
+                            <div class="cofg-aim-top"></div>
+                            <div class="cofg-aim-mid"></div>
+                            <div class="cofg-aim-bot"></div>
                         </div>
                         <button class="cofg-50">50</button>
                         <button class="cofg-55">55</button>
@@ -301,8 +307,8 @@
                         <button class="LH2aft-button">OFF</button>
                         <button class="LH2aft-buttonON">ON</button>
 
-                        <button class="L0Xfwd-button">OFF</button>
-                        <button class="L0Xfwd-buttonON">ON</button>
+                        <button class="LOXfwd-button">OFF</button>
+                        <button class="LOXfwd-buttonON">ON</button>
 
                         <button class="LOXaft-button">OFF</button>
                         <button class="LOXaft-buttonON">ON</button>
@@ -311,28 +317,39 @@
                          alt="triangle with all three sides equal"
                          height="100"
                          width="100" />
-                    <button class="LH2fwdlabel-content">100%</button>
+                    <button class="LH2fwdlabel-content">LH2fwd</button>
                     <img class="LOXfwdlabel" src="./assets/label.svg"
                          alt="triangle with all three sides equal"
                          height="100"
                          width="100" />
-                    <button class="LOXfwdlabel-content">90%</button>
+                    <button class="LOXfwdlabel-content">LOXfwd</button>
                     <img class="LH2aftlabel" src="./assets/label.svg"
                          alt="triangle with all three sides equal"
                          height="100"
                          width="100" />
-                    <button class="LH2aftlabel-content">80%</button>
+                    <button class="LH2aftlabel-content">LH2aft</button>
                     <img class="LOXaftlabel" src="./assets/label.svg"
                          alt="triangle with all three sides equal"
                          height="100"
                          width="100" />
-                    <button class="LOXaftlabel-content">70%</button>
+                    <button class="LOXaftlabel-content">LOXaft</button>
 
                 </div>
             </div>
             <div class="eng game-footer">
-                <button class="eng game-ready">READY</button>
+                <button class="eng game-ready">START</button>
                 <button class="eng chat-return">CHAT</button>
+                <div class="debug-box">
+                    <div class="debug-left">
+                        <button class="debug-velocity">The velocity is: </button>
+                        <button class="debug-altitude">The altitude is: </button>
+
+                    </div>
+                    <div class="debug-right">
+                        <button class="debug-cofg">The cofg is: </button>
+                        <button class="debug-mode">The current mode is: </button>
+                    </div>
+                </div>
             </div>
             <div class="eng brief-display">
                 <div class="brief-header">

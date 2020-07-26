@@ -10,6 +10,7 @@ module.exports = function (room) {
     this.users = [];
     this.start = false;
     this.time = 0;
+    this.count = 0;
 
     //add user to game room 
     this.addUser = function (id, username, room) {
@@ -58,12 +59,14 @@ module.exports = function (room) {
 
     }
 
-    this.startGame = function () {
-
-        //start game when ready function is called
+    this.startGame = function () {       
         this.start = true;
+    }
+
+    this.incTime = function () {
 
 
+        this.time ++;
     }
 
 }
