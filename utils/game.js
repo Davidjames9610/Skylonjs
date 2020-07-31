@@ -64,9 +64,11 @@ module.exports = function (room) {
     }
 
     this.incTime = function () {
-
-
         this.time ++;
+    }
+
+    this.setTime = function (timeinc) {
+        this.time += timeinc;
     }
 
 }

@@ -82,6 +82,26 @@ io.on('connection', (sock) => {
         io.to(user.room).emit('startRoomGame', msg);  
     });
 
+    //debug time 
+    sock.on('debug-time', () => {
+
+        console.log("debug-time");
+
+
+        // addd x time to all users in the room
+        const user = getUserfromGames(sock.id);
+
+        var jump = 10;
+
+        getGamefromGames(user.room).setTime(jump);
+        io.to(user.room).emit('time-jump', jump); 
+
+    });
+
+
+
+
+
     // Runs when client disconnects
     sock.on('disconnect', () => {
        
