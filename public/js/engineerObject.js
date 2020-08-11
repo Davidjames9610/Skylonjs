@@ -337,12 +337,21 @@ engineerObject.prototype.updatecofg = function (time) {
     if (currentmach <= 1.33) {
 
         cofgMid = (3.27831 * currentmach) + 50;
-        cofgBot = cofgMid - 1; //(2.50172 * currentmach) + 48.8423;
-        cofgTop = cofgMid + 1;//(3.216 * currentmach) + 51.02227351;
+        cofgBot = cofgMid + 1.5; //(2.50172 * currentmach) + 48.8423;
+        cofgTop = cofgMid - 1.5;//(3.216 * currentmach) + 51.02227351;
 
         $(".cofg-aim-top").css("top", translatecofg(cofgTop) + "%");
         $(".cofg-aim-bot").css("top", translatecofg(cofgBot) + "%");
         $(".cofg-aim-mid").css("top", translatecofg(cofgMid) + "%");
+
+        $(".cofg-top-box").css("top", translatecofg(cofgTop) + "%");
+        $(".cofg-top-box").css("height", (translatecofg(cofgMid) - translatecofg(cofgTop)) + "%");
+
+        $(".cofg-bot-box").css("top", translatecofg(cofgMid) + "%");
+        $(".cofg-bot-box").css("height", (translatecofg(cofgBot) - translatecofg(cofgMid)) + "%");
+
+
+
 
     } else if (1.33 < currentmach <= 5.39) {
 
@@ -385,11 +394,16 @@ engineerObject.prototype.updatecofg = function (time) {
 
     // use fuel to set the position of the actual cofg 
 
+    //this is the NB
+
     var currentcofg = Math.round(this.getcofg() * 100) / 100;
-    $(".debug-cofg").html("The current cofg is: " + currentcofg);
+    //$(".debug-cofg").html("The current cofg is: " + currentcofg);
     //55 -> 50 %
     currentcofg = ((currentcofg - 50) / 10) * 100;
     $(".cofg-middle").css("top", currentcofg + "%");
+    $(".cofg-middle-white").css("top", (currentcofg - 0.5) + "%");
+
+
 
 
 }
@@ -415,35 +429,6 @@ engineerObject.prototype.getcofg = function () {
     momt = momt / masst;
     return momt;
 };
-
-//other 
-
-
-
-
-engineerObject.prototype.getw1 = function () {
-
-    var pct = (this.w1 / this.w1c) * 100;
-    return pct;
-}
-
-engineerObject.prototype.getw2 = function () {
-
-    var pct = (this.w2 / this.w2c) * 100;
-    return pct;
-}
-
-engineerObject.prototype.getw3 = function () {
-    var pct = (this.w3 / this.w3c) * 100;
-    return pct;
-
-}
-
-engineerObject.prototype.getw4 = function () {
-    var pct = (this.w4 / this.w4c) * 100;
-    return pct;
-
-}
 
 
 export default engineerObject;

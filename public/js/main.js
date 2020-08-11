@@ -15,12 +15,6 @@ var roll = "null";
 var currentTime = 0;
 
 
-//engineer things
-//var fuelBinary = 0;
-//var mode = 1; //mode 1
-
-//cofg 
-
 
 $(document).ready(function () {
 
@@ -30,7 +24,6 @@ $(document).ready(function () {
 
 });
 
-//update step must be called within server communication code
 
 function serverCommunication() {
 
@@ -102,9 +95,8 @@ function serverCommunication() {
         currentTime = JSON.stringify(gameobj);
         $(".game-timer").html(currentTime);
 
-        //updateEngineer(currentTime);
-
-        myeng.update(currentTime);
+        //update eng object 
+        myeng.update(currentTime);     
 
     });
 
@@ -144,8 +136,6 @@ function serverCommunication() {
     ${users.map(user => `<li>${user.username}</li>`).join('')}
   `;
     }
-
-
     
 }
 
@@ -163,19 +153,23 @@ function setSizeofDom() {
         if (width >= 2048) {
             fontBody.css("font-size", "22px");
             $(".fontbutton").html("the font size is 22px");
+            console.log("The font size if 22px");
 
         } else if ((2048 > width) && (width >= 1920)) {
             fontBody.css("font-size", "20px");
             $(".fontbutton").html("the font size is 20px");
-
+            console.log("The font size if 20px");
 
         } else if ((1920 > width) && (width >= 1856)) {
             fontBody.css("font-size", "16px");
             $(".fontbutton").html("the font size is 16px");
+            console.log("The font size if 16px");
 
         } else if ((1856 > width) && (width >= 1200)) {
             fontBody.css("font-size", "14px");
             $(".fontbutton").html("the font size is 14px");
+            console.log("The font size if 14px");
+            $(".GameButtton").css("font-size", "14px");
         }
 
 
@@ -290,65 +284,3 @@ function centerObject(objectWidth, containerWidth) {
     return (containerWidth - objectWidth) / 2;
 }
 
-//dynamic code
-/*
-function updateEngineer(currentTime) {
-
-    //called every second
-
-    //check to see if mode should change
-    if (currentTime > 585) {
-        mode = 2;
-    }       
-
-    //consume fuel 
-    myeng.consumefuel(fuelBinary, mode, 1);
-
-    //update screen 
-    // [1] update graphs
-    updategraphs(currentTime);
-
-    // [2] update cofg
-    updatecofg(currentTime);
-
-    // [3] update fuel
-    updatefuel();
-
-    //update debug 
-    updatedebug(currentTime);
-
-
-}
-
-/*
-
-
-
-
-
-
-
-
-function updategraphs(seconds) {
-
-    //console.log("hi");
-
-    var vy = ((100 - ((MachInfoG[seconds] / 4973) * 100)) - 2.5) + "%";
-    var vx = (((seconds / MachInfoG.length) * 100) - 1.5) + "%";
-
-    $(".vel-circle").css("top", vy);
-    $(".vel-circle").css("left", vx);
-
-    var ay = ((100 - ((HeightInfoG[seconds] / 66704) * 100)) - 2.5) + "%";
-    var ax = (((seconds / MachInfoG.length) * 100) - 1.5) + "%";
-
-    $(".alt-circle").css("top", ay);
-    $(".alt-circle").css("left", ax);
-
-    // would subtract some sort of offset depending on the pilot.
-    //
-
-
-}
-
-*/
