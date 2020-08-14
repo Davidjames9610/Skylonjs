@@ -8,7 +8,7 @@ import screenObject from './screenObject.js';
 import engineerObject from './engineerObject.js';
 
 var myScreen = new screenObject(screen.width, screen.height);
-var myeng = new engineerObject();
+var myeng = new engineerObject(socket);
 
 //local variables
 var roll = "null";
@@ -80,8 +80,8 @@ function serverCommunication() {
 
     socket.on('time-jump', time_jump => {
 
-        //  myeng.consumefuel(fuelBinary, mode, time_jump)
-        //console.log(time_jump);
+        myeng.updatefuel2(time_jump)
+        console.log(time_jump);
         //time jump
 
     });

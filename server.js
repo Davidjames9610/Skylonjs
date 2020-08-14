@@ -87,7 +87,6 @@ io.on('connection', (sock) => {
 
         console.log("debug-time");
 
-
         // addd x time to all users in the room
         const user = getUserfromGames(sock.id);
 
@@ -171,7 +170,7 @@ var update = function () {
                 io.to(currentgame.room).emit('update', currentgame);
                 currentgame.count ++;
 
-                if (currentgame.count > 20) {
+                if (currentgame.count > 20) {        //should be 20 for seconds
 
                     currentgame.incTime();
                     io.to(currentgame.room).emit('Timeupdate', currentgame.time);
