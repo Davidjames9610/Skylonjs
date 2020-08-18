@@ -97,8 +97,21 @@ io.on('connection', (sock) => {
 
     });
 
+    //debug time 
+    sock.on('time-end', () => {
 
+        //log request 
+        console.log("time-end");
 
+        //pause game 
+        const user = getUserfromGames(sock.id);
+        getGamefromGames(user.room).pauseGame();        //set game start value to false
+
+        //emit a pause game event to all of the other users inside the game...
+        //this can be the same message used for when abort from eng is pressed?
+        io.to(user.room).emit('end-event');
+
+    });
 
 
     // Runs when client disconnects
@@ -170,8 +183,7 @@ var update = function () {
                 io.to(currentgame.room).emit('update', currentgame);
                 currentgame.count ++;
 
-                if (currentgame.count > 20) {        //should be 20 for seconds
-
+                if (currentgame.count > 1) {        //should be 20 for seconds
                     currentgame.incTime();
                     io.to(currentgame.room).emit('Timeupdate', currentgame.time);
                     currentgame.count = 0;

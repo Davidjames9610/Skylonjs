@@ -23,6 +23,10 @@
         .brief-display{
             display:none;
         }
+        .end-container{
+            display:none;
+        }
+
 
         </style>
 </head>
@@ -186,7 +190,7 @@
                 </div>
             </div>
             <div class="pilot game-footer">
-                <button class="pilot game-ready">START GAME!</button>
+                <button class="pilot game-ready">START</button>
                 <button class="pilot chat-return">CHAT</button>
             </div>
             <div class="pilot brief-display">
@@ -341,6 +345,9 @@
                 <button class="eng game-ready">START</button>
                 <button class="eng chat-return">CHAT</button>
                 <div class="debug-box">
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
                     <div class="debug-left">
                         <button class="debug-velocity">The velocity is: </button>
                         <button class="debug-altitude">The altitude is: </button>
@@ -350,6 +357,9 @@
                         <button class="debug-cofg">The cofg is: </button>
                         <button class="debug-mode">The current mode is: </button>
                         <button class="debug-time">Add Time</button>
+                        <button class="debug-v">v+</button>
+                        <button class="debug-hu">h+</button>
+                        <button class="debug-hd">h-</button>
                     </div>
                 </div>
             </div>
@@ -381,6 +391,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="end-container">
+            <div class="end-container-title">
+                <button class="end-title typical-button">SIMULATION OVER</button>
+            </div>
+            <div class="end-container-main">
+                <button class="end-main typical-button">Performance review </button>
+            </div>
+            <div class="end-container-footer">
+                <button class="end-footer typical-click hover">EXIT</button>
+            </div>
+        </div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>

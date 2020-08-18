@@ -87,7 +87,6 @@ function serverCommunication() {
     });
 
 
-
     socket.on('Timeupdate', gameobj => {
 
         // this will be called from the server every second
@@ -98,6 +97,21 @@ function serverCommunication() {
         //update eng object 
         myeng.update(currentTime);     
 
+        //end the game if the time is above 870 seconds 
+
+        if (currentTime >= 300) {
+            //generate server message 
+            socket.emit('time-end');
+        }
+
+    });
+
+    socket.on('end-event', () => {
+
+        //display a new screen, overlay the previous screen;
+        console.log("end-event");
+        //working so far
+        $(".end-container").css("display", "block");
     });
 
     socket.on('startRoomGame', msg => {
@@ -243,7 +257,6 @@ function setButtonsUp() {
     //navigation inside game display
     $(".game-brief").on("click", () => {
         $(".brief-display").css("display", "block");
-
     })
     $(".brief-close").on("click", () => {
         $(".brief-display").css("display", "none");
@@ -258,6 +271,19 @@ function setButtonsUp() {
         }
 
     })
+
+    //navigation within game-end display 
+    $(".end-footer").on("click", () => {
+
+        //disconnect 
+        console.log("the game has ended, disconnect now ")
+        window.location.href = "index.html";
+
+    })
+
+
+
+
 
 }
 

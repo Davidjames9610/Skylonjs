@@ -71,6 +71,10 @@ module.exports = function (room) {
         this.time += timeinc;
     }
 
+    this.pauseGame = function () {
+        this.start = false;
+    }
+
 }
 
 

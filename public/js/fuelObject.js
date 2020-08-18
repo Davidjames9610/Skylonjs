@@ -17,8 +17,8 @@ function fuelObject() {
     this.w4c = 98000 * (1 / 3);
 
     //fuel tanks status 
-    this.LH2fwd_status = 0;        //lh1
-    this.LH2aft_status = 0;        //lh2
+    this.LH2fwd_status = 1;        //lh1
+    this.LH2aft_status = 1;        //lh2
     this.LOXfwd_status = 0;        //lo1
     this.LOXaft_status = 0;        //lo2
 
@@ -112,7 +112,7 @@ fuelObject.prototype.ToggleLOXaft = function (boolean) {
 // update fuel tanks and cofg display
 fuelObject.prototype.update = function (currentSpeed, mode) {
 
-    //this.autopilot();
+    this.autopilot();
 
     //use the fuel tanks status to burn fuel and update the cofg
     this.update_variables(mode);
@@ -328,7 +328,7 @@ fuelObject.prototype.autopilot = function () {
     //inputs:
 
     var diff = this.desiredCofg - this.currentCofg;
-    var window = 0.2;
+    var window = 0;
 
     if (diff > window) {
 
