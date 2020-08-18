@@ -8,7 +8,7 @@ import screenObject from './screenObject.js';
 import engineerObject from './engineerObject.js';
 
 var myScreen = new screenObject(screen.width, screen.height);
-var myeng = new engineerObject(socket);
+var myEngineerObject = new engineerObject(socket);
 
 //local variables
 var roll = "null";
@@ -80,7 +80,7 @@ function serverCommunication() {
 
     socket.on('time-jump', time_jump => {
 
-        myeng.updatefuel2(time_jump)
+        myEngineerObject.updatefuel2(time_jump)
         console.log(time_jump);
         //time jump
 
@@ -95,7 +95,7 @@ function serverCommunication() {
         $(".game-timer").html(currentTime);
 
         //update eng object 
-        myeng.update(currentTime);     
+        myEngineerObject.update(currentTime);     
 
         //end the game if the time is above 870 seconds 
 
@@ -223,8 +223,8 @@ function setButtonsUp() {
             $(".chat-container").css("display", "none");
             $(".eng-container").css("display", "block");
             //loadEngineerdisplay()       //call this every update step as well?
-            myeng.loadEngineer();
-
+            //myeng.loadEngineer();
+            myEngineerObject.load();
 
         } else if (roll == "Pilot") {
             $(".chat-container").css("display", "none");
