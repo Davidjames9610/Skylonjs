@@ -881,6 +881,7 @@ background-color: white;
     top: 2%;
     left: 2%;
     background-color: red;
+    display:none;
 }
 .vel-down-arrow-outline {
     position: absolute;

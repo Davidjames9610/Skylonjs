@@ -34,17 +34,23 @@ function engineerObject(socket) {
 
 engineerObject.prototype.load = function () {
 
-    //load the velocity and height graphs 
+   
+    // load the fuel tanks 
 
+    this.fuelObject.load();
+    this.graphObject.load();
+/*
     var fuel_container = $(".fueltank-container").width();
     var fuel_tank = $(".fuel-tanks").width();
     var offset = centerObject(fuel_tank, fuel_container);
     $(".fuel-tanks").css("left", offset + "px");
     $(".fuel-fire").css("width", fuel_tank + "px");
-    $(".fuel-fire").css("left", offset + "px");
+    $(".fuel-fire").css("left", offset + "px");*/
 
 
-    //Altitude graph 
+
+    //load the graphs
+/*
     var graph = $(".alt-graph");
     var graphwidth = graph.width();
     var graphheight = graph.height();
@@ -91,10 +97,8 @@ engineerObject.prototype.load = function () {
         ctx.lineTo(currentx, graphheight - currenty);
     }
 
-    ctx.stroke();
+    ctx.stroke();*/
 
-    fuelObject.load();
-    //graphObject.load();
 }
 
 
@@ -109,13 +113,6 @@ engineerObject.prototype.update = function (time) {
 
     this.graphObject.update(time);
 
-
-    //this.updategraphs(time);
-    //this.updateHeightArrows();
-    //this.updateSpeedArrows();
-
-    //autopilot
-    //this.autopilot(time);
 
     //debug stuff 
     //$(".debug-velocity").html("The current velocity is: Mach " + Math.round((this.speedData[time] / 343) * 100) / 100);

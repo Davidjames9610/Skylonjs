@@ -50,8 +50,10 @@ function fuelObject() {
 
 }
 
-//load the button when the fuel Object is created
+//load the object when created in engineer object 
 fuelObject.prototype.load = function () {
+
+    //[1] load buttons 
 
     $(".LH2fwd-button").on("click", () => {
         this.ToggleLH2fwd(true);
@@ -79,6 +81,16 @@ fuelObject.prototype.load = function () {
     $(".LOXfwd-buttonON").on("click", () => {
         this.ToggleLOXfwd(false);
     })
+
+
+    //[2] load display 
+
+    var fuel_container = $(".fueltank-container").width();
+    var fuel_tank = $(".fuel-tanks").width();
+    var offset = centerObject(fuel_tank, fuel_container);
+    $(".fuel-tanks").css("left", offset + "px");
+    $(".fuel-fire").css("width", fuel_tank + "px");
+    $(".fuel-fire").css("left", offset + "px");
 
 }
 
@@ -398,6 +410,11 @@ fuelObject.prototype.autopilot = function () {
 function translatecofg(cofg) {
     return ((cofg - 50) / 10) * 100;
 }
+
+function centerObject(objectWidth, containerWidth) {
+    return (containerWidth - objectWidth) / 2;
+}
+
 
 
 export default fuelObject;

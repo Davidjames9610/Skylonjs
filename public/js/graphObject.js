@@ -9,33 +9,94 @@ function graphObject() {
     this.currentTime;
 
     //speed 
-    this.speedGreen = 200;
-    this.speedYellow = 1200;
-    this.speedRed = 2200;
+    this.speedgreen = 200;
+    this.speedyellow = 1200;
+    this.speedred = 2200;
     this.speedDelta = 50;
 
     //height
     this.heightred = 22000;
     this.heightyellow = 12000;
     this.heightgreen = 2000;
-    this.heightDelta;
+    this.heightDelta = 1000;
 
     //Offsets 
     this.heightOffset = 0;
     this.speedOffset = 0;
   
-    // debug functions
+}
+
+graphObject.prototype.load = function(){
+
+    //load buttons 
     $(".debug-hu").on("click", () => {
-        this.heightOffset += 1000;
+        this.heightOffset += this.heightDelta;
     })
 
     $(".debug-hd").on("click", () => {
-        this.heightOffset += -1000;
+        this.heightOffset += -this.heightDelta;
     })
 
-    $(".debug-v").on("click", () => {
-        this.speedOffset += 100;
+    $(".debug-vu").on("click", () => {
+        this.speedOffset += this.speedDelta;
     })
+
+    $(".debug-vd").on("click", () => {
+        this.speedOffset += -this.speedDelta;
+    })
+
+    //load the graphs
+
+    //[1] Altitude graph
+
+    var graph = $(".alt-graph");
+    var graphwidth = graph.width();
+    var graphheight = graph.height();
+    var AltCanvas = document.getElementById('AltCanvas');
+    AltCanvas.width = graphwidth;
+    AltCanvas.height = graphheight;
+
+    var ctx = AltCanvas.getContext("2d");
+
+    var len = this.heightData.length;
+    var xincrement = graphwidth / len;
+    var currentx = 0;
+    var currenty = 0;
+
+    ctx.moveTo(0, graphheight);   //zero 
+    for (var i = 0; i < len; i++) {
+        currentx = Math.round(xincrement * i);
+        currenty = (this.heightData[i] / 75000) * graphheight;
+        ctx.lineTo(currentx, graphheight - currenty);
+    }
+    ctx.stroke();
+
+    //[2] Velocity graph 
+
+    var graphv = $(".vel-graph");
+    var graphwidthv = graphv.width();
+    var graphheightv = graphv.height();
+    var VelCanvas = document.getElementById('VelCanvas');
+    VelCanvas.width = graphwidthv;
+    VelCanvas.height = graphheightv;
+
+    var ctx = VelCanvas.getContext("2d");
+    //this.speedData[i] / 4973
+
+    var len = this.speedData.length;
+    var xincrement = graphwidthv / len;
+
+    var currentx = 0;
+    var currenty = 0;
+
+    ctx.moveTo(0, graphheight);   //zero 
+    for (var i = 0; i < len; i++) {
+        currentx = Math.round(xincrement * i);
+        currenty = (this.speedData[i] / 6500) * graphheight;
+        ctx.lineTo(currentx, graphheight - currenty);
+    }
+
+    ctx.stroke();
 
 }
 
@@ -46,6 +107,7 @@ graphObject.prototype.update = function (time) {
 
     this.updateGraphPositions();
     this.updateArrowsHeight();
+    this.updateArrowsSpeed(); 
 
 }
 
@@ -75,6 +137,7 @@ graphObject.prototype.updateGraphPositions = function () {
 graphObject.prototype.updateArrowsHeight = function () {
 
     //height graph first...
+
     var heightoffset = Math.abs(this.heightOffset);
     var sign = Math.sign(this.heightOffset);
     var stringsign = "+";
@@ -151,6 +214,88 @@ graphObject.prototype.updateArrowsHeight = function () {
     //set the inner html of both arrows to the absolute offset 
     $(".aubv").html(stringsign + heightoffset);
     $(".adbv").html(stringsign + heightoffset);
+}
+
+graphObject.prototype.updateArrowsSpeed = function () {
+
+    //Draw warning arrows in the speed graph depending on the current speed offset 
+
+    var absSpeedOffset = Math.abs(this.speedOffset);
+    var sign = Math.sign(this.speedOffset);
+    var stringsign = "+";
+
+    var color;
+    var red;
+    var green;
+    var blue;
+    var temp = 0;
+
+    if (absSpeedOffset < this.speedgreen) {
+
+        // make arrows invisible if the offset is within the minimum range 
+
+        $(".vel-up-arrow").css("display", "none");
+        $(".vel-down-arrow").css("display", "none");
+
+    } else if (absSpeedOffset < this.speedyellow) {
+
+        //offset is within the lowest range, change from green to yellow
+
+        //find relative distance into green - yellow window
+        temp = Math.round((((absSpeedOffset - this.speedgreen) / (this.speedyellow - this.speedgreen)) * 255));
+
+        //define and set color
+        red = temp;
+        green = 255;
+        blue = 0;
+        color = rgb(red, green, blue);
+
+        //set color of arrows 
+        $(".vel-up-arrow").css("background-color", color);
+        $(".vel-down-arrow").css("background-color", color);
+        console.log(absSpeedOffset, "start change to yellow");
+
+        //only make the correct arrow visible
+        if (sign > 0) {
+            $(".vel-down-arrow").css("display", "block");
+        } else {
+            $(".vel-up-arrow").css("display", "block");
+        }
+
+    } else if (absSpeedOffset < this.speedred) {
+
+        //offset is within the larger range, change from yellow to red
+
+        //define relative 
+        temp = Math.round((((absSpeedOffset - this.speedyellow) / (this.speedred - this.speedyellow)) * 255));
+
+        //define and set colors
+        red = 255;
+        green = 255 - temp;
+        blue = 0;
+        color = rgb(red, green, blue);
+
+        $(".vel-up-arrow").css("background-color", color);
+        $(".vel-down-arrow").css("background-color", color);
+
+    } else {
+        // if offset is above maximum, then arrows are red
+
+        color = rgb(255, 0, 0);
+        $(".vel-up-arrow").css("background-color", color);
+        $(".vel-down-arrow").css("background-color", color);
+    }
+
+
+    if (sign > 0) {
+        stringsign = "+";
+    } else {
+        stringsign = "-";
+    }
+
+    //set the inner html of both arrows to the absolute offset 
+    $(".vubv").html(stringsign + absSpeedOffset);
+    $(".vdbv").html(stringsign + absSpeedOffset);
 }
 
 
