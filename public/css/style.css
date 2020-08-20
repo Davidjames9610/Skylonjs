@@ -452,17 +452,17 @@ background-color: white;
 .pitch-pointer-container {
     position: absolute;
     z-index: 8;
-    top: 38%;
+    top: 0%;
     left: 60%;
-    height: 24%;
+    height: 100%;
     width: 15%;
 }
 .pitch-pointer {
     position: relative;
-    background-color: #efd500;
-    top: 47%;
+    background-color: red;
+    top: 50%;
     left: 0%;
-    height: 3%;
+    height: 0.7%;
     width: 100%;
 }
 .pitch-label-container {
@@ -1469,7 +1469,52 @@ left:35%;
 }
 
 
+.debug-pilot {
 
+    position: absolute;
+    height: 35%;
+    width: 30%;
+    left:-10%;
+    top:55%;
+    background-color:grey;
+    opacity:0.8;
+}
+
+.debug-pilot-left{
+    position: absolute;
+    border: 1px dashed black;
+    top:0%;
+    height:100%;
+    left:0%;
+    width:50%;
+}
+
+.debug-pilot-right {
+    position: absolute;
+    border: 1px dashed black;
+    top: 0%;
+    height: 100%;
+    left: 50%;
+    width: 50%;
+}
+
+.debug-button{
+    position:static;
+    color:black;
+    width:100%;
+    height:8%;
+    background-color:white;
+
+}
+
+.debug-title {
+    position: static;
+    color: black;
+    width: 100%;
+    height: 8%;
+    background-color: black;
+    color: white;
+}
 
 
 

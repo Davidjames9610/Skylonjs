@@ -6,9 +6,11 @@ const userList = document.getElementById('users');
 
 import screenObject from './screenObject.js';
 import engineerObject from './engineerObject.js';
+import pilotObject from './pilotObject.js';
 
 var myScreen = new screenObject(screen.width, screen.height);
 var myEngineerObject = new engineerObject(socket);
+var myPilotObject = new pilotObject;
 
 //local variables
 var roll = "null";
@@ -94,13 +96,19 @@ function serverCommunication() {
         currentTime = JSON.stringify(gameobj);
         $(".game-timer").html(currentTime);
 
-        //update eng object 
-        myEngineerObject.update(currentTime);     
+
+        //update the correct role only
+
+        if (roll == "Pilot") {
+            myPilotObject.update(currentTime);
+        } else if (roll == "Engineer") {
+            myEngineerObject.update(currentTime);
+        }
 
         //end the game if the time is above 870 seconds 
 
-        if (currentTime >= 300) {
-            //generate server message 
+        if (currentTime >= 870) {
+            //generate server message // is this working for the pilot at the moment?
             socket.emit('time-end');
         }
 
@@ -229,7 +237,9 @@ function setButtonsUp() {
         } else if (roll == "Pilot") {
             $(".chat-container").css("display", "none");
             $(".pilot-container").css("display", "block");
-            loadPilotdisplay()
+
+            myPilotObject.load();
+            //loadPilotdisplay()
         }
 
     })
@@ -253,6 +263,9 @@ function setButtonsUp() {
         var msg = true;
         socket.emit('startRequest', msg);    
     })
+
+
+    // consider moving this code into respective roles?
 
     //navigation inside game display
     $(".game-brief").on("click", () => {
@@ -285,28 +298,5 @@ function setButtonsUp() {
 
 
 
-}
-
-function loadPilotdisplay() {
-
-    //pilot display
-    var hudWidth = $(".pilot-ihud").width();
-    var offset = centerObject(($(".hud-outer").width()), hudWidth);
-    $(".hud-outer").css("left", offset + "px");
-    $(".hud-detail").css("left", offset + "px");
-    $(".hud-titles").css("left", offset + "px");
-
-    //position sky container and sky
-    var skyw = $(".hud-outer").width() * 0.7;
-    $(".hud-sky").width(skyw);
-    var offset = centerObject(skyw, hudWidth);
-    $(".hud-sky").css("left", offset + "px");
-    var offset = centerObject($(".sky-SVG").width(), skyw);
-    $(".sky-SVG").css("left", offset + "px");
-
-}
-
-function centerObject(objectWidth, containerWidth) {
-    return (containerWidth - objectWidth) / 2;
 }
 
