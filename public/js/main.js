@@ -71,12 +71,11 @@ function serverCommunication() {
 
 
     //get room and users
-    socket.on('update', gameobj => {
+    socket.on('update', () => {
 
-        //console.log("update game 20 frames per second")
-        //update(gameobj);
-        //this will be called every 20 frames per second , we will use it to update the positions of everything. The obj is shared between the engineer and the pilot
-        //It wil contain informaiton which allows the displays to be drawn in the right location, how?
+        if (roll == "Pilot") {
+            myPilotObject.fpsUpdate();
+        } 
 
     });
 
@@ -100,7 +99,7 @@ function serverCommunication() {
         //update the correct role only
 
         if (roll == "Pilot") {
-            myPilotObject.update(currentTime);
+            myPilotObject.secondUpdate(currentTime);
         } else if (roll == "Engineer") {
             myEngineerObject.update(currentTime);
         }

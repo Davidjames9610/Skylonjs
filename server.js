@@ -180,10 +180,10 @@ var update = function () {
             currentgame = games[i];
 
             if (currentgame.start == true) {
-                io.to(currentgame.room).emit('update', currentgame);
+                io.to(currentgame.room).emit('update');            //20 frames per second...
                 currentgame.count ++;
 
-                if (currentgame.count > 1) {        //should be 20 for seconds
+                if (currentgame.count > 20) {        //should be 20 for seconds
                     currentgame.incTime();
                     io.to(currentgame.room).emit('Timeupdate', currentgame.time);
                     currentgame.count = 0;

@@ -459,7 +459,7 @@ background-color: white;
 }
 .pitch-pointer {
     position: relative;
-    background-color: red;
+    background-color: #efd500;
     top: 50%;
     left: 0%;
     height: 0.7%;
