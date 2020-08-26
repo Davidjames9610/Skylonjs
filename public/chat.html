@@ -371,26 +371,33 @@
             <div class="eng game-footer">
                 <button class="eng game-ready">START</button>
                 <button class="eng chat-return">CHAT</button>
-                <div class="debug-box">
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    </div>
-                    <div class="debug-left">
-                        <button class="debug-velocity">The velocity is: </button>
-                        <button class="debug-altitude">The altitude is: </button>
-
-                    </div>
-                    <div class="debug-right">
-                        <button class="debug-cofg">The cofg is: </button>
-                        <button class="debug-mode">The current mode is: </button>
-                        <button class="debug-time">Add Time</button>
-                        <button class="debug-vu">v+</button>
-                        <button class="debug-vd">v+</button>
-                        <button class="debug-hu">h+</button>
-                        <button class="debug-hd">h-</button>
-                    </div>
+            </div>
+            <div class="debug-eng">
+                <div class="debug-eng-left">
+                    <button class="debug-button">debug</button>
+                    <button class="debug-title">speed aim:</button>
+                    <button class="debug-button speed-aim">value</button>
+                    <button class="debug-button speed-aim2">value</button>
+                    <button class="debug-title">speed offset:</button>
+                    <button class="debug-button speed-offset">value</button>
+                    <button class="debug-title">height aim: </button>
+                    <button class="debug-button height-aim">value</button>
+                    <button class="debug-title">height offset:</button>
+                    <button class="debug-button height-offset">value</button>
+                </div>
+                <div class="debug-eng-right">
+                    <button class="debug-button"></button>
+                    <button class="debug-title">cofg current </button>
+                    <button class="debug-button cofg-current">value</button>
+                    <button class="debug-title">cofg aim </button>
+                    <button class="debug-button cofg-aim">value</button>
+                    <button class="debug-title">spread value </button>
+                    <button class="debug-button cofg-spread">value</button>
+                    <button class="debug-title">mode</button>
+                    <button class="debug-button mode">value</button>
                 </div>
             </div>
+
             <div class="eng brief-display">
                 <div class="brief-header">
                     <button class="brief-close hover">CLOSE</button>
@@ -425,7 +432,11 @@
                 <button class="end-title typical-button">SIMULATION OVER</button>
             </div>
             <div class="end-container-main">
-                <button class="end-main typical-button">Performance review </button>
+                <button class="typical-button">Performance review</button>
+                <p>
+                 Congratulations! you completed the simulation by reaching MECO.
+                 You had x amount of fuel left and achieved x% accuracy.     
+                </p>
             </div>
             <div class="end-container-footer">
                 <button class="end-footer typical-click hover">EXIT</button>

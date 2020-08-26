@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 
-const PORT = 8090; //process.env.PORT; //8090;//process.env.PORT; 
+const PORT = process.env.PORT; //8090;//process.env.PORT; 
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -202,7 +202,7 @@ var update = function () {
                 io.to(currentgame.room).emit('update');            //20 frames per second...
                 currentgame.count ++;
 
-                if (currentgame.count > 20) {        //should be 20 for seconds
+                if (currentgame.count > 10) {        //should be 20 for seconds
                     currentgame.incTime();
                     io.to(currentgame.room).emit('Timeupdate', currentgame.time);
                     currentgame.count = 0;

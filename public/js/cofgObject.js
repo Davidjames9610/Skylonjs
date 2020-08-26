@@ -12,11 +12,13 @@ class cofgObject {
         
         this.cofgAim = 52;
         this.cofgCurrent = 52;
+        this.spread = 2;
     }
 
-    update(time) {
+    update(time, cofgCurrent) {
 
         this.currentTime = time;
+        this.cofgCurrent = cofgCurrent;
 
         //update going up, this should possibly be dependant on the speed as well? check later...
 
@@ -25,8 +27,10 @@ class cofgObject {
         }
 
         this.updateDisplay();
-        this.debug();
-
+        
+        $(".cofg-current").html(Math.round(this.cofgCurrent*100)/100);
+        $(".cofg-aim").html(Math.round(this.cofgAim*100)/100);
+        $(".cofg-spread").html(Math.round(this.spread*100)/100);
     }
 
     updateDisplay(){
@@ -47,34 +51,47 @@ class cofgObject {
 
         // The position and width of the window depends on the speed of the ship 
         var currentSpeed = this.speedData[this.currentTime] / 343;
-   
+
+
+        // add the windows properly here..
         if (currentSpeed < 1.33) {
 
+            // speed1 = 0.63, speed2 = 1.33
+            // spread1 = 2, spread2 = 1.8
+            this.spread = calculateSpread(currentSpeed,0.63,1.33,2,1.8);
+
             cofgMid = (3.27831 * currentSpeed) + 50;
-            cofgBot = cofgMid + 1.5; //(2.50172 * currentSpeed) + 48.8423;
-            cofgTop = cofgMid - 1.5; //(3.216 * currentSpeed) + 51.02227351;
+            cofgBot = cofgMid + this.spread/2;
+            cofgTop = cofgMid - this.spread/2;
+
         }
         else if (currentSpeed < 5.39) {
+            // speed1 = 1.33, speed2 = 5.39
+            // spread1 = 1.8, spread2 = 1.6
+            this.spread = calculateSpread(currentSpeed,1.33,5.39,1.8,1.6);
 
             cofgMid = (0.41943 * currentSpeed) + 53.84;
-            cofgBot = cofgMid + 1;
-            cofgTop = cofgMid - 1;
+            cofgBot = cofgMid + this.spread/2;
+            cofgTop = cofgMid - this.spread/2;
         }
         else {
-
             //18.16
+            // speed1 = 5.39, speed2 = 18.16
+            // spread1 = 1.8, spread2 = 1.6
+            this.spread = calculateSpread(currentSpeed,5.39,18.16,1.6,1.2);
+            // at the moment I am assuming the spread doesnt constantly decrease but increases again when speed decreases... 
+
             if (this.goingup == true) {
                 cofgMid = (0.14956 * currentSpeed) + 55.3;
-                cofgBot = cofgMid + 1;
-                cofgTop = cofgMid - 1;
+                cofgBot = cofgMid + this.spread/2;
+                cofgTop = cofgMid - this.spread/2;
             }
             else {
                 cofgMid = (0.13827 * currentSpeed) + 55.4;
-                cofgBot = cofgMid + 1;
-                cofgTop = cofgMid - 1;
+                cofgBot = cofgMid + this.spread/2;
+                cofgTop = cofgMid - this.spread/2;
             }
         }
-
 
         $(".cofg-aim-top").css("top", translatecofg(cofgTop) + "%");
         $(".cofg-aim-bot").css("top", translatecofg(cofgBot) + "%");
@@ -87,11 +104,11 @@ class cofgObject {
 
         // for debug?
         this.cofgAim = cofgMid;
+
     }
 
     updatePosition(){
         //update the position of the current cofg
-
         var cofgPosition = translatecofg(this.cofgCurrent);
 
         $(".cofg-middle").css("top", cofgPosition + "%");
@@ -99,22 +116,26 @@ class cofgObject {
 
     }
 
-    debug(){
-    
-    $(".debug-cofg").html("current cofg: " + (Math.round(this.cofgCurrent * 100) / 100) + " aim: " + (Math.round(this.cofgAim * 100) / 100) + " the dif is: " + (Math.round((this.cofgCurrent - this.cofgAim) * 100) / 100));
-
+    getCofgAim(){
+        return(this.cofgAim);
     }
 
-    updateCurrentCofg(currentCofg){
-        //update the objects cofg position using data from fuelObject
-        this.cofgCurrent = currentCofg;
-    }
 }
 
 //helper functions
 
 function translatecofg(cofg) {
     return ((cofg - 50) / 10) * 100;
+}
+
+
+function calculateSpread(xc,x1,x2,y1,y2){
+
+//interpolation 
+var m = (y2-y1)/(x2 - x1);
+var c = y2 - (m*x2);
+var yc = (m*xc) + c;
+return Math.round(yc*100)/100;
 }
 
 export default cofgObject;

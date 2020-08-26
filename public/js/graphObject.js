@@ -29,6 +29,7 @@ function graphObject() {
 graphObject.prototype.load = function(){
 
     //load buttons 
+    /*
     $(".debug-hu").on("click", () => {
         this.heightOffset += this.heightDelta;
     })
@@ -43,7 +44,7 @@ graphObject.prototype.load = function(){
 
     $(".debug-vd").on("click", () => {
         this.speedOffset += -this.speedDelta;
-    })
+    })*/
 
     //load the graphs
 

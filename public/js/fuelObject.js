@@ -166,11 +166,11 @@ class fuelObject {
         }
     }
     // update fuel tanks and cofg display
-    update(time) {
+    update(time,cofgaim) {
         //called every second
         //input = current time from server
-
         this.currentTime = time;
+        this.desiredCofg = cofgaim;
 
         //time related functions 
         if (time > 585) {
@@ -181,10 +181,16 @@ class fuelObject {
         }
 
         //this.autopilot();
-
         this.updateCofgCurrent();     //this needs to be in the fuel object (on/off status are input)
 
         this.updateFuel();
+        //debug 
+
+        if(this.mode == 1){
+            $(".mode").html("mode 1: LH2");
+        }else{
+            $(".mode").html("mode 2: LOX and LH2");            
+        }
 
     }
 
@@ -265,6 +271,8 @@ class fuelObject {
         
         //console.log(cofg_change)
         this.currentCofg += cofg_change;
+
+        
 
     }
 
