@@ -3,6 +3,7 @@
 
 import fuelObject from './fuelObject.js';
 import graphObject from './graphObject.js';
+import cofgObject from './cofgObject.js';
 
 
 //constructor 
@@ -14,6 +15,9 @@ class engineerObject {
 
         //graph object 
         this.graphObject = new graphObject();
+
+        //cofg object
+        this.cofgObject = new cofgObject();
 
         //offset values shared with the pilot    
         this.heightOffset = 0;
@@ -33,6 +37,12 @@ class engineerObject {
 
         //update the smaller objects
         this.fuelObject.update(time);
+
+        //console.log(this.fuelObject.getCurrentCofg());
+
+        this.cofgObject.updateCurrentCofg(this.fuelObject.getCurrentCofg());        //update the cofgObject w/ fuelObject
+
+        this.cofgObject.update(time);
 
         this.graphObject.update(time);
 

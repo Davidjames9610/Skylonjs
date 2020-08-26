@@ -6,22 +6,8 @@
     --light-brown: #ededed;
 }
 
-* {
-
-}
-
-body {
-
-}
-
-ul {
-
-}
-
 
 /* Chat Page */
-
-
 
 .typical-button {
     color: black;
@@ -1233,7 +1219,7 @@ background-color: white;
     font-weight: bold;
     color: black;
     font-size: 18px;
-    display: none;
+    display: block;
 }
 .LH2aft-buttonON {
     top: 67%;
@@ -1248,7 +1234,7 @@ background-color: white;
     font-weight: bold;
     color: black;
     font-size: 18px;
-    display: block;
+    display: none;
 }
 .LOXfwd-button {
     top: 0%;
