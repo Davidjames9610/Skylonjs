@@ -6,45 +6,56 @@ import graphObject from './graphObject.js';
 
 
 //constructor 
-function engineerObject(socket) {
+class engineerObject {
+    constructor() {
+        
+        //fuel object
+        this.fuelObject = new fuelObject();
 
-    //this.socket = socket;
+        //graph object 
+        this.graphObject = new graphObject();
 
-    //fuel burn rates
-    this.fuelObject = new fuelObject();
+        //offset values shared with the pilot    
+        this.heightOffset = 0;
+        this.speedOffset = 0;
 
-    //graph object 
-    this.graphObject = new graphObject();
-}
+    }
+    load() {
+        // load the fuel and graph objects 
 
-engineerObject.prototype.load = function () {
+        this.fuelObject.load();
+        this.graphObject.load();
 
-    // load the fuel and graph objects 
+    }
+    //update Engineer
+    update(time) {
+        //called every second
 
-    this.fuelObject.load();
-    this.graphObject.load();
+        //update the smaller objects
+        this.fuelObject.update(time);
 
-}
+        this.graphObject.update(time);
+
+        //debug stuff 
+        //$(".debug-velocity").html("The current velocity is: Mach " + Math.round((this.speedData[time] / 343) * 100) / 100);
+        //$(".debug-altitude").html("The current altitude is: " + Math.round((this.heightData[time]) * 100) / 100 + "m");
+        //$(".debug-mode").html("The current mode is: " + mode);
+    }
 
 
-//update Engineer
-engineerObject.prototype.update = function (time) {
+    updateOffset(offsetObject){
 
-    //called every second
-
-    //update the smaller objects
+     //this.heightOffset = offsetObject.height;
+     //this.speedOffset = offsetObject.speed;   
     
-    this.fuelObject.update(time);
-
-    this.graphObject.update(time);
-
-
-    //debug stuff 
-    //$(".debug-velocity").html("The current velocity is: Mach " + Math.round((this.speedData[time] / 343) * 100) / 100);
-    //$(".debug-altitude").html("The current altitude is: " + Math.round((this.heightData[time]) * 100) / 100 + "m");
-    //$(".debug-mode").html("The current mode is: " + mode);
-
+     //this.fuelObject.updateOffset(offsetObject);
+     this.graphObject.updateOffset(offsetObject);
+    
+    }
 }
+
+
+
 
 
 export default engineerObject;

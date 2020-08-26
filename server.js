@@ -114,6 +114,25 @@ io.on('connection', (sock) => {
     });
 
 
+        //debug time 
+        sock.on('offset-update', offsetObject => {
+
+            //log request 
+            //console.log(offset.height); looks like this is working 
+
+            //update game 
+            
+            //pause game 
+            const user = getUserfromGames(sock.id);
+
+            // is there any point in updating the actual game?
+            //getGamefromGames(user.room).updateOffsets(offsetObject);    // not    
+    
+            //tell the other players (engineer) that there has been an update..
+            io.to(user.room).emit('offset-emit', offsetObject);
+    
+        });
+
     // Runs when client disconnects
     sock.on('disconnect', () => {
        

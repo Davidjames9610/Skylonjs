@@ -13,7 +13,7 @@ var myEngineerObject = new engineerObject(socket);
 var myPilotObject = new pilotObject;
 
 //local variables
-var roll = "null";
+var role = "null";
 var currentTime = 0;
 
 
@@ -48,7 +48,7 @@ function serverCommunication() {
 
     //message from server
     socket.on('message', message => {
-        console.log(message);
+        //console.log(message);
         outputMessage(message);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     });
@@ -73,7 +73,7 @@ function serverCommunication() {
     //get room and users
     socket.on('update', () => {
 
-        if (roll == "Pilot") {
+        if (role == "Pilot") {
             myPilotObject.fpsUpdate();
         } 
 
@@ -98,17 +98,40 @@ function serverCommunication() {
 
         //update the correct role only
 
-        if (roll == "Pilot") {
+        if (role == "Pilot") {
             myPilotObject.secondUpdate(currentTime);
-        } else if (roll == "Engineer") {
+            
+            var object  = myPilotObject.getOffset();
+
+            socket.emit("offset-update", object);//, object);
+
+        } else if (role == "Engineer") {
             myEngineerObject.update(currentTime);
         }
+        
+        // 
+
+
 
         //end the game if the time is above 870 seconds 
 
         if (currentTime >= 870) {
             //generate server message // is this working for the pilot at the moment?
             socket.emit('time-end');
+        }
+
+    });
+
+
+    socket.on('offset-emit', object => {
+
+        if(role == "Engineer"){
+
+            myEngineerObject.updateOffset(object);
+            
+            //console.log("engineer offset update yo");
+            //console.log(gameobj.height);
+
         }
 
     });
@@ -224,16 +247,16 @@ function setButtonsUp() {
     //chat room 
     $(".chat-enterGame").on("click", () => {
 
-        if (roll == "null") {
+        if (role == "null") {
             alert("please choose a role!");
-        } else if (roll == "Engineer") {
+        } else if (role == "Engineer") {
             $(".chat-container").css("display", "none");
             $(".eng-container").css("display", "block");
             //loadEngineerdisplay()       //call this every update step as well?
             //myeng.loadEngineer();
             myEngineerObject.load();
 
-        } else if (roll == "Pilot") {
+        } else if (role == "Pilot") {
             $(".chat-container").css("display", "none");
             $(".pilot-container").css("display", "block");
 
@@ -247,13 +270,13 @@ function setButtonsUp() {
 
     $(".role-engineer").on("click", () => {
         //alert("role-engineer!");
-        roll = "Engineer";
+        role = "Engineer";
         const msg = "I choose to be a Engineer";
         socket.emit('chatMessage', msg);
 
     })
     $(".role-pilot").on("click", () => {
-        roll = "Pilot";
+        role = "Pilot";
         const msg = "I choose to be a Pilot";
         socket.emit('chatMessage', msg);
     })
@@ -274,10 +297,10 @@ function setButtonsUp() {
         $(".brief-display").css("display", "none");
     })
     $(".chat-return").on("click", () => {
-        if (roll == "Engineer") {
+        if (role == "Engineer") {
             $(".chat-container").css("display", "block");
             $(".eng-container").css("display", "none");
-        } else if (roll == "Pilot") {
+        } else if (role == "Pilot") {
             $(".chat-container").css("display", "block");
             $(".pilot-container").css("display", "none");
         }

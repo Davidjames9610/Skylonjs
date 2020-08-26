@@ -100,6 +100,15 @@ graphObject.prototype.load = function(){
 
 }
 
+graphObject.prototype.updateOffset = function (offsetObject){
+
+    //update the values of the offsets using from main, updated when pilot sends them...
+
+    this.heightOffset = offsetObject.height;
+    this.speedOffset = offsetObject.speed;
+
+}
+
 
 graphObject.prototype.update = function (time) {
 

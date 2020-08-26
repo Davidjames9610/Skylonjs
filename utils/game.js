@@ -12,6 +12,11 @@ module.exports = function (room) {
     this.time = 0;
     this.count = 0;
 
+    //ideally all the information would actually be stored here...
+    //this.heightOffset = 0;
+    //this.speedOffset = 0;
+    //height and speed offsets?
+
     //add user to game room 
     this.addUser = function (id, username, room) {
 
